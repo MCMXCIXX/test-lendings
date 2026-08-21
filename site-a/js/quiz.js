@@ -1,115 +1,116 @@
 /**
  * Bondeskovgaard Cleaning ApS — Quiz engine (Site A)
- * Answers: A=chercheur, B=verificateur, C=observateur, D=acteur
+ * Keys: chercheur / verificateur / observateur / acteur
+ * UI uses numeric indices 01–04 (not A–D letter circles)
  */
 (function () {
   "use strict";
 
-  var STORAGE_KEY = "bc_quiz_result_v1";
+  var STORAGE_KEY = "bc_lab_result_v2";
 
   var PROFILES = {
     chercheur: {
       id: "chercheur",
       name: "Chercheur de contexte",
       short:
-        "Face à une déclaration choc, vous suspendez le jugement et reconstituez d'abord la scène.",
+        "Vous reconstruez la scène avant d'accepter le récit du plateau.",
       description:
-        "Quand une phrase retentit à l'antenne et prétend avoir choqué toute la France, votre premier réflexe n'est pas l'indignation : c'est la vérification. Vous cherchez le clip original, le moment exact, les faits manquants. Ce besoin de cadre révèle une vigilance cognitive rare.",
+        "Dès qu'une déclaration présentée comme choquante traverse l'antenne, vous suspendez l'émotion. Votre priorité : retrouver l'extrait, l'horaire, les interlocuteurs, le cadre. Ce n'est pas de la froideur — c'est une méthode pour ne pas confondre intensité médiatique et réalité établie.",
       strengths: [
-        "Curiosité méthodique face à l'urgence médiatique",
-        "Résistance aux conclusions précipitées",
-        "Capacité à distinguer le récit du fait",
+        "Discipline face à l'urgence du direct",
+        "Goût pour les chronologies complètes",
+        "Capacité à séparer bruit et matière factuelle",
       ],
-      tip: "Avant de partager, notez en une phrase ce que vous savez vraiment — et ce qui reste une hypothèse.",
+      tip: "Notez trois faits vérifiés et une inconnue. Partagez uniquement les faits — gardez l'inconnue hors du fil.",
     },
     verificateur: {
       id: "verificateur",
       name: "Vérificateur de formulation",
       short:
-        "Vous entendez d'abord les mots : ampleur, certitude, généralisations cachées.",
+        "Vous entendez d'abord la rhétorique : ampleur, certitude, angles morts.",
       description:
-        "Une déclaration censée choquer toute la France vous met en alerte linguistique. « Toute la France », « hier soir », « à l'antenne » : vous mesurez la portée des affirmations avant d'adhérer. Votre profil lit la rhétorique comme un signal, pas comme une vérité.",
+        "Les formules absolues (« toute la France », « personne n'en revient ») déclenchent votre alerte. Vous lisez la déclaration comme un texte : ce qui est affirmé, ce qui est suggéré, ce qui est dramatisé. Votre force est de rendre l'annonce mesurable avant d'y réagir.",
       strengths: [
-        "Précision face aux formules spectaculaires",
-        "Sensibilité aux hyperboles et aux angles morts",
-        "Jugement nuancé sur ce qui est affirmé vs suggéré",
+        "Sens aigu des hyperboles du plateau",
+        "Lecture fine du ton et des sous-entendus",
+        "Réflexe de reformulation avant adhésion",
       ],
-      tip: "Reformulez l'annonce sans superlatifs. Si le sens s'effondre, la formulation faisait le travail émotionnel.",
+      tip: "Réécrivez la phrase sans superlatif. Si elle s'effondre, c'est la formulation — pas le fond — qui portait le choc.",
     },
     observateur: {
       id: "observateur",
       name: "Observateur calme",
       short:
-        "Vous laissez d'abord le tumulte retomber avant de former votre lecture.",
+        "Vous laissez le tumulte retomber avant de fixer votre lecture.",
       description:
-        "Lorsque quelque chose « a choqué toute la France » selon les plateaux, vous regardez les réactions avant d'y participer. Ce détachement n'est pas de l'indifférence : c'est une stratégie pour ne pas être emporté par la contagion émotionnelle du direct.",
+        "Quand on dit qu'une info a choqué toute la France, vous regardez d'abord comment l'onde se propage. Ce recul n'est pas de l'indifférence : c'est une stratégie pour éviter la contagion émotionnelle du direct. Vous intervenez plus tard, souvent plus juste.",
       strengths: [
-        "Distance émotionnelle utile en période de bruit",
-        "Lecture fine des dynamiques collectives",
+        "Distance utile en période de surchauffe",
+        "Lecture des dynamiques collectives",
         "Patience face à la surenchère d'opinions",
       ],
-      tip: "Fixez-vous un délai court (par ex. 30 minutes) avant tout commentaire public sur une annonce choc.",
+      tip: "Fixez un délai court (vingt minutes) avant tout commentaire public sur une annonce explosive.",
     },
     acteur: {
       id: "acteur",
       name: "Acteur pratique",
       short:
-        "Vous traduisez immédiatement l'annonce en impact concret sur votre journée.",
+        "Vous traduisez l'annonce en impact concret — ou vous passez.",
       description:
-        "Une déclaration choc à l'antenne ne reste pas abstraite pour vous : vous évaluez vite si elle change une décision, un déplacement, une conversation. Votre énergie va vers l'utile. Le spectacle médiatique compte moins que la conséquence réelle.",
+        "Une phrase choc à l'antenne ne reste pas abstraite pour vous. Vous demandez vite : cela change-t-il une décision, un trajet, une conversation ? Si non, vous économisez votre attention. Votre boussole, c'est l'utilité réelle, pas le spectacle.",
       strengths: [
-        "Orientation action sous pression informationnelle",
-        "Tri rapide entre signal et distraction",
-        "Efficacité décisionnelle sans sur-analyser",
+        "Tri rapide signal / distraction",
+        "Orientation action sous pression info",
+        "Économie d'énergie cognitive",
       ],
-      tip: "Posez la question : « Qu'est-ce que je change concrètement demain ? » Si la réponse est « rien », rangez l'alerte.",
+      tip: "Posez la question : « Qu'est-ce que je modifie demain ? » Si la réponse est « rien », classez le sujet.",
     },
   };
 
   var QUESTIONS = [
     {
-      text: "Vous entendez à l'antenne : « Ce qui s'est passé hier soir a choqué toute la France. » Votre tout premier pas…",
+      text: "À l'antenne, on martèle que la déclaration d'hier soir a choqué toute la France. Votre tout premier geste…",
       options: [
-        { key: "A", profile: "chercheur", label: "Retrouver le passage original et le contexte exact." },
-        { key: "B", profile: "verificateur", label: "Interroger l'ampleur de « toute la France »." },
-        { key: "C", profile: "observateur", label: "Observer comment l'entourage et les réseaux réagissent." },
-        { key: "D", profile: "acteur", label: "Vérifier si cela change quelque chose pour vous aujourd'hui." },
+        { idx: "01", profile: "chercheur", label: "Retrouver l'extrait original et son contexte." },
+        { idx: "02", profile: "verificateur", label: "Interroger la portée de « toute la France »." },
+        { idx: "03", profile: "observateur", label: "Observer comment l'onde se propage autour de vous." },
+        { idx: "04", profile: "acteur", label: "Vérifier si cela change quelque chose pour vous aujourd'hui." },
       ],
     },
     {
-      text: "Une déclaration choc circule en boucle. On vous demande votre avis immédiatement. Vous…",
+      text: "On vous demande immédiatement votre avis sur cette déclaration choc. Vous…",
       options: [
-        { key: "A", profile: "chercheur", label: "Dites que vous voulez d'abord les faits bruts." },
-        { key: "B", profile: "verificateur", label: "Relevez ce qui est affirmé sans preuve dans la phrase." },
-        { key: "C", profile: "observateur", label: "Préférez écouter avant de prendre position." },
-        { key: "D", profile: "acteur", label: "Répondez surtout sous l'angle des conséquences pratiques." },
+        { idx: "01", profile: "chercheur", label: "Reportez le jugement tant que les faits manquent." },
+        { idx: "02", profile: "verificateur", label: "Repérez ce qui est affirmé sans preuve dans la phrase." },
+        { idx: "03", profile: "observateur", label: "Préférez écouter avant de prendre position." },
+        { idx: "04", profile: "acteur", label: "Répondez surtout sous l'angle des conséquences concrètes." },
       ],
     },
     {
-      text: "Le présentateur insiste : « Personne n'en revient. » Qu'est-ce qui vous marque le plus ?",
+      text: "Le présentateur lance : « Personne n'en revient. » Qu'est-ce qui vous accroche le plus ?",
       options: [
-        { key: "A", profile: "chercheur", label: "L'absence d'éléments concrets sur ce qui s'est passé." },
-        { key: "B", profile: "verificateur", label: "La généralisation absolue (« personne »)." },
-        { key: "C", profile: "observateur", label: "La pression émotionnelle du plateau en direct." },
-        { key: "D", profile: "acteur", label: "Savoir si une action ou une décision en découle." },
+        { idx: "01", profile: "chercheur", label: "Le manque d'éléments sur ce qui s'est réellement passé." },
+        { idx: "02", profile: "verificateur", label: "La généralisation absolue (« personne »)." },
+        { idx: "03", profile: "observateur", label: "La pression émotionnelle du plateau en direct." },
+        { idx: "04", profile: "acteur", label: "Savoir si une décision pratique en découle." },
       ],
     },
     {
-      text: "Vous croisez la même phrase choc le lendemain matin. Votre réflexe…",
+      text: "Le lendemain, la même phrase circule encore. Votre réflexe…",
       options: [
-        { key: "A", profile: "chercheur", label: "Comparer plusieurs sources pour croiser les versions." },
-        { key: "B", profile: "verificateur", label: "Voir si la formulation a été adoucie ou amplifiée." },
-        { key: "C", profile: "observateur", label: "Mesurer si l'emballement a déjà baissé." },
-        { key: "D", profile: "acteur", label: "Décider vite si le sujet mérite encore votre attention." },
+        { idx: "01", profile: "chercheur", label: "Croiser plusieurs versions pour stabiliser le récit." },
+        { idx: "02", profile: "verificateur", label: "Voir si la formulation a été adoucie ou amplifiée." },
+        { idx: "03", profile: "observateur", label: "Mesurer si l'emballement a déjà baissé." },
+        { idx: "04", profile: "acteur", label: "Décider vite si le sujet mérite encore votre attention." },
       ],
     },
     {
-      text: "Face à une info censée avoir « choqué toute la France », vous vous sentez le plus utile lorsque vous…",
+      text: "Face à une info censée avoir « choqué toute la France », vous vous sentez le plus utile quand vous…",
       options: [
-        { key: "A", profile: "chercheur", label: "Remettez de l'ordre chronologique et factuel." },
-        { key: "B", profile: "verificateur", label: "Démontez les tournures trompeuses." },
-        { key: "C", profile: "observateur", label: "Calmez le débat autour de vous." },
-        { key: "D", profile: "acteur", label: "Proposez la prochaine étape concrète." },
+        { idx: "01", profile: "chercheur", label: "Remettez de l'ordre chronologique et factuel." },
+        { idx: "02", profile: "verificateur", label: "Démontez les tournures qui forcent l'émotion." },
+        { idx: "03", profile: "observateur", label: "Apaisez le débat autour de vous." },
+        { idx: "04", profile: "acteur", label: "Proposez la prochaine étape tangible." },
       ],
     },
   ];
@@ -171,11 +172,7 @@
     var root = el("quiz-root");
     if (!root) return;
 
-    var state = {
-      index: 0,
-      answers: [],
-    };
-
+    var state = { index: 0, answers: [] };
     var progressBar = el("quiz-progress-bar");
     var progressLabel = el("quiz-progress-label");
     var progressPct = el("quiz-progress-pct");
@@ -187,7 +184,9 @@
       var current = state.index + 1;
       var pct = Math.round((state.index / total) * 100);
       if (progressBar) progressBar.style.width = pct + "%";
-      if (progressLabel) progressLabel.textContent = "Question " + current + " / " + total;
+      if (progressLabel) {
+        progressLabel.textContent = "Étape " + current + " / " + total;
+      }
       if (progressPct) progressPct.textContent = pct + " %";
     }
 
@@ -213,20 +212,20 @@
       var q = QUESTIONS[state.index];
       updateProgress();
 
-      questionEl.classList.remove("quiz-question");
+      questionEl.classList.remove("quiz-q");
       void questionEl.offsetWidth;
-      questionEl.classList.add("quiz-question");
+      questionEl.classList.add("quiz-q");
       questionEl.textContent = q.text;
 
       optionsEl.innerHTML = "";
       q.options.forEach(function (opt) {
         var btn = document.createElement("button");
         btn.type = "button";
-        btn.className = "quiz-option";
+        btn.className = "quiz-opt";
         btn.setAttribute("data-profile", opt.profile);
         btn.innerHTML =
-          '<span class="quiz-option__letter" aria-hidden="true">' +
-          opt.key +
+          '<span class="quiz-opt__idx" aria-hidden="true">' +
+          opt.idx +
           "</span><span>" +
           opt.label +
           "</span>";
@@ -250,10 +249,10 @@
 
     if (!profile) {
       root.innerHTML =
-        '<div class="card">' +
-        "<h1>Résultat indisponible</h1>" +
-        "<p>Aucun parcours de quiz n'a été détecté. Reprenez les cinq questions pour découvrir votre profil.</p>" +
-        '<p style="margin-top:1.5rem"><a class="btn btn--primary" href="quiz.html">Lancer le quiz</a></p>' +
+        '<div class="panel result-sheet">' +
+        "<h1>Fiche indisponible</h1>" +
+        "<p class=\"lede\">Aucun parcours n'a été détecté sur cet appareil. Relancez les cinq étapes pour générer votre lecture.</p>" +
+        '<p class="result-actions"><a class="btn btn--teal" href="quiz.html">Ouvrir le parcours</a></p>' +
         "</div>";
       return;
     }
@@ -265,33 +264,31 @@
       .join("");
 
     root.innerHTML =
-      '<div class="result-hero is-revealed">' +
-      '<p class="result-kicker">Votre profil</p>' +
+      '<div class="panel result-sheet">' +
+      '<p class="result-kicker">Lecture dominante</p>' +
       "<h1>" +
       profile.name +
       "</h1>" +
-      "<p>" +
+      '<p class="lede">' +
       profile.short +
       "</p>" +
-      "</div>" +
-      '<article class="card is-revealed" style="animation-delay:0.08s">' +
-      "<h2>Ce que cela révèle</h2>" +
+      "<h2>Ce que le parcours révèle</h2>" +
       "<p>" +
       profile.description +
       "</p>" +
-      '<h3 class="accent" style="margin-top:1.5rem">Vos forces</h3>' +
-      '<ul class="forces-list">' +
+      "<h3>Forces observées</h3>" +
+      '<ul class="forces">' +
       forces +
       "</ul>" +
-      '<div class="tip-box"><strong>Piste concrète</strong><p style="margin:0;color:var(--text-muted)">' +
+      '<div class="tip"><strong>Piste pour la prochaine onde</strong><p style="margin:0">' +
       profile.tip +
       "</p></div>" +
-      '<p class="disclaimer"><strong style="color:var(--text-muted)">Avertissement</strong> — Ce quiz est proposé à titre purement ludique et récréatif. Il ne constitue ni un diagnostic psychologique, ni un conseil professionnel, ni une évaluation scientifique. Les profils sont des archétypes simplifiés destinés au divertissement.</p>' +
-      '<p style="margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:0.75rem">' +
-      '<a class="btn btn--primary" href="quiz.html">Refaire le parcours</a>' +
+      '<p class="disclaimer"><strong>Avertissement ludique</strong> — Ce résultat est proposé à titre purement récréatif. Il ne constitue ni un diagnostic psychologique, ni un conseil professionnel, ni une évaluation scientifique. Les profils sont des archétypes simplifiés destinés au divertissement.</p>' +
+      '<p class="result-actions">' +
+      '<a class="btn btn--teal" href="quiz.html">Refaire le parcours</a>' +
       '<a class="btn btn--ghost" href="index.html">Retour à l\'accueil</a>' +
       "</p>" +
-      "</article>";
+      "</div>";
   }
 
   window.BondeskovgaardQuiz = {

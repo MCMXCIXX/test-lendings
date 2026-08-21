@@ -1,24 +1,22 @@
-/* Clouds Taking Shape ApS — Design tokens (Site B) */
+/* Clouds Taking Shape ApS — Affiche / outil 2 min */
 :root {
-  --cream: #f7f3ec;
-  --cream-deep: #efe8dc;
   --white: #ffffff;
-  --ink: #141414;
-  --ink-soft: #3d3d3d;
-  --muted: #6b6560;
-  --line: #e4ddd2;
-  --coral: #ff5c2e;
-  --coral-deep: #e64518;
-  --coral-soft: #ffe6de;
-  --coral-mid: #ffd2c4;
-  --header: #0f0f0f;
-  --success-tint: #fff4ef;
+  --snow: #f4f5f7;
+  --ink: #0b0d12;
+  --ink-2: #1c2230;
+  --mute: #5c6578;
+  --line: #d8dde8;
+  --blue: #2b59ff;
+  --blue-deep: #1a3fd6;
+  --blue-soft: #e8edff;
+  --blue-glow: rgba(43, 89, 255, 0.22);
+  --ok: #0f9f6e;
 
-  --font: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --font-poster: "Archivo Black", "Arial Black", Impact, sans-serif;
+  --font-ui: "DM Sans", "Segoe UI", system-ui, sans-serif;
 
-  --r-sm: 10px;
-  --r-md: 14px;
-  --r-lg: 20px;
+  --r: 18px;
+  --r-sm: 12px;
   --r-pill: 999px;
 
   --s1: 0.25rem;
@@ -27,15 +25,13 @@
   --s4: 1rem;
   --s5: 1.5rem;
   --s6: 2rem;
-  --s7: 3rem;
+  --s7: 3.25rem;
   --s8: 5rem;
 
-  --wrap: 70rem;
-  --wrap-sm: 42rem;
+  --wrap: 72rem;
+  --wrap-sm: 40rem;
 
-  --shadow-soft: 0 10px 30px rgba(20, 20, 20, 0.06);
-  --shadow-card: 0 12px 28px rgba(20, 20, 20, 0.07);
-  --spring: cubic-bezier(0.34, 1.45, 0.64, 1);
+  --shadow: 0 18px 40px rgba(11, 13, 18, 0.08);
+  --spring: cubic-bezier(0.34, 1.35, 0.64, 1);
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --fast: 0.22s;
 }

@@ -1,45 +1,44 @@
-/* Bondeskovgaard Cleaning ApS — Design tokens (Site A) */
+/* Bondeskovgaard Cleaning ApS — Laboratoire d'écoute */
 :root {
-  --bg-deep: #07080b;
-  --bg-mid: #0e1015;
-  --bg-elevated: #161922;
-  --bg-card: #1b1f2a;
-  --bg-card-hover: #222734;
+  --paper: #e8edf2;
+  --paper-deep: #dce3eb;
+  --surface: #f7f9fb;
+  --ink: #12202c;
+  --ink-soft: #2a3a48;
+  --muted: #5a6a78;
+  --faint: #8a98a6;
+  --line: #c5d0da;
+  --line-strong: #9aadb8;
 
-  --amber: #e8a54b;
-  --amber-bright: #f3bd68;
-  --gold: #c9892e;
-  --amber-dim: rgba(232, 165, 75, 0.12);
-  --amber-glow: rgba(232, 165, 75, 0.32);
-  --amber-line: rgba(232, 165, 75, 0.45);
+  --teal: #0a7a6e;
+  --teal-deep: #075e55;
+  --teal-soft: #d4ebe7;
+  --teal-mid: #9fd0c8;
+  --signal: #c23b3b;
+  --signal-soft: #f5e0e0;
 
-  --text: #f7f2ea;
-  --text-muted: #b0aaa1;
-  --text-faint: #746f68;
-  --border: rgba(247, 242, 234, 0.09);
-  --border-strong: rgba(232, 165, 75, 0.3);
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", "Consolas", monospace;
 
-  --font-display: "Libre Baskerville", "Times New Roman", Georgia, serif;
-  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --r-sm: 2px;
+  --r-md: 4px;
+  --r-lg: 8px;
 
-  --radius-sm: 3px;
-  --radius-md: 6px;
-  --radius-lg: 10px;
+  --s1: 0.25rem;
+  --s2: 0.5rem;
+  --s3: 0.75rem;
+  --s4: 1rem;
+  --s5: 1.5rem;
+  --s6: 2rem;
+  --s7: 3rem;
+  --s8: 4.5rem;
 
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2rem;
-  --space-7: 3.25rem;
-  --space-8: 5rem;
+  --wrap: 68rem;
+  --wrap-sm: 38rem;
+  --header-h: 3.75rem;
 
-  --max-w: 40rem;
-  --max-w-wide: 58rem;
-  --header-h: 4.25rem;
-
-  --shadow-cta: 0 0 0 1px rgba(232, 165, 75, 0.35), 0 10px 36px var(--amber-glow);
+  --shadow-panel: 0 1px 0 rgba(18, 32, 44, 0.06), 0 12px 32px rgba(18, 32, 44, 0.06);
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --dur: 0.4s;
+  --dur: 0.45s;
 }

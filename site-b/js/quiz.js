@@ -1,91 +1,91 @@
 /**
  * Clouds Taking Shape ApS — Quiz engine (Site B)
- * A=contexte, B=formulation, C=observateur, D=acteur
+ * Soft module UI (no A–D letter circles)
  */
 (function () {
   "use strict";
 
-  var KEY = "cts_quiz_result_v1";
+  var KEY = "cts_tool_result_v2";
 
   var PROFILES = {
     contexte: {
       id: "contexte",
       name: "Chercheur de contexte",
-      blurb: "Vous cartographiez d'abord la scène avant de prendre position.",
-      body: "Dès qu'une info « choc » circule, vous voulez la chronologie, la source et le cadre. Ce n'est pas du doute pour le doute : c'est votre façon de consommer l'actualité avec méthode. Vous gagnez en clarté quand les autres s'emballent.",
-      forces: ["Méthode sous pression", "Résilience face au buzz", "Goût du fact-checking"],
-      tip: "Gardez trois onglets max pour croiser les versions — au-delà, la curiosité devient dispersion.",
+      blurb: "Vous cartographiez la scène avant d'ouvrir le débat.",
+      body: "Quand une info se présente comme un électrochoc national, vous freinez. Votre priorité : source, déroulé, cadre. Ce n'est pas de la lenteur — c'est votre façon de rester lucide pendant que le plateau s'emballe.",
+      forces: ["Méthode sous tension", "Résistance au buzz incomplet", "Goût du croisement de sources"],
+      tip: "Limitez-vous à trois sources pour croiser. Au-delà, la curiosité se dilue.",
     },
     formulation: {
       id: "formulation",
       name: "Vérificateur de formulation",
-      blurb: "Vous décortiquez les mots et l'ampleur de ce qui est affirmé.",
-      body: "Une tournure trop absolue (« toute la France », « personne n'en revient ») active votre radar. Vous séparez ce qui est dit, ce qui est sous-entendu et ce qui est dramatisé. Votre force : rendre l'annonce mesurable.",
-      forces: ["Précision linguistique", "Sens des hyperboles", "Lecture critique du ton"],
-      tip: "Réécrivez la phrase sans adjectifs spectaculaires. Si elle s'affaiblit, la formulation portait l'émotion.",
+      blurb: "Vous pesez les mots avant d'avaler le récit.",
+      body: "Une tournure trop absolue active votre filtre. Vous séparez ce qui est dit, ce qui est soufflé et ce qui est dramatisé. Votre super-pouvoir : rendre l'annonce mesurable.",
+      forces: ["Précision linguistique", "Radar anti-hyperbole", "Lecture critique du ton"],
+      tip: "Réécrivez la phrase sans adjectifs spectaculaires. Si elle tombe à plat, la formulation portait l'émotion.",
     },
     observateur: {
       id: "observateur",
       name: "Observateur calme",
-      blurb: "Vous laissez le bruit retomber avant de vous engager.",
-      body: "Vous observez les réactions collectives comme un baromètre. Ce recul vous protège de la contagion émotionnelle du direct. Vous intervenez plus tard… mais souvent plus juste.",
-      forces: ["Calme émotionnel", "Lecture des dynamiques", "Patience stratégique"],
-      tip: "Activez un minuteur de 20 minutes avant tout commentaire public sur une annonce explosive.",
+      blurb: "Vous regardez la vague passer avant d'y plonger.",
+      body: "Vous utilisez les réactions collectives comme baromètre. Ce recul vous protège de la contagion émotionnelle du direct. Vous parlez plus tard — souvent plus juste.",
+      forces: ["Calme émotionnel", "Lecture des dynamiques", "Timing stratégique"],
+      tip: "Lancez un minuteur de 15 minutes avant tout commentaire public sur une annonce explosive.",
     },
     acteur: {
       id: "acteur",
       name: "Acteur pratique",
-      blurb: "Vous transformez l'info en décision utile — ou vous passez.",
-      body: "Vous filtrez vite : cette déclaration change-t-elle quelque chose pour vous ? Si non, vous économisez votre attention. Si oui, vous agissez. Votre boussole, c'est l'utilité concrète.",
+      blurb: "Vous convertissez l'info en décision utile — ou vous zappez.",
+      body: "Votre filtre est simple : ça change quelque chose pour moi ? Si non, vous économisez votre attention. Si oui, vous passez à l'action. L'utilité gagne toujours sur le spectacle.",
       forces: ["Efficacité", "Tri signal / bruit", "Orientation action"],
-      tip: "Écrivez une action de 5 minutes max. Si vous n'en trouvez aucune, classez le sujet.",
+      tip: "Écrivez une micro-action de 5 minutes. Si rien ne vient, classez le sujet.",
     },
   };
 
   var QUESTIONS = [
     {
-      text: "Une annonce retentit et on dit qu'elle a « choqué toute la France ». Votre premier mouvement ?",
+      text: "On annonce à l'antenne qu'une déclaration a « choqué toute la France ». Votre premier mouvement ?",
       options: [
-        { key: "A", profile: "contexte", label: "Je remonte à la source et au déroulé exact." },
-        { key: "B", profile: "formulation", label: "Je questionne l'expression « toute la France »." },
-        { key: "C", profile: "observateur", label: "Je regarde d'abord comment les autres réagissent." },
-        { key: "D", profile: "acteur", label: "Je me demande si cela impacte ma journée." },
+        { profile: "contexte", label: "Je remonte à la source et au déroulé exact." },
+        { profile: "formulation", label: "Je questionne l'expression « toute la France »." },
+        { profile: "observateur", label: "Je regarde d'abord comment les autres réagissent." },
+        { profile: "acteur", label: "Je me demande si cela impacte ma journée." },
       ],
     },
     {
-      text: "On vous presse de « réagir tout de suite » à une déclaration choc. Vous…",
+      text: "On vous presse de réagir tout de suite. Vous…",
       options: [
-        { key: "A", profile: "contexte", label: "Demandez les faits bruts avant tout avis." },
-        { key: "B", profile: "formulation", label: "Signalez ce qui est affirmé sans preuve." },
-        { key: "C", profile: "observateur", label: "Préférez écouter encore un peu." },
-        { key: "D", profile: "acteur", label: "Répondez surtout via les conséquences utiles." },
+        { profile: "contexte", label: "Demandez les faits bruts avant tout avis." },
+        { profile: "formulation", label: "Signalez ce qui est affirmé sans preuve." },
+        { profile: "observateur", label: "Préférez écouter encore un peu." },
+        { profile: "acteur", label: "Répondez surtout via les conséquences utiles." },
       ],
     },
     {
       text: "Le plateau martèle : « Personne n'en revient. » Qu'est-ce qui vous accroche ?",
       options: [
-        { key: "A", profile: "contexte", label: "Le manque de détails concrets sur l'événement." },
-        { key: "B", profile: "formulation", label: "La généralisation totale (« personne »)." },
-        { key: "C", profile: "observateur", label: "La montée émotionnelle du studio." },
-        { key: "D", profile: "acteur", label: "Savoir s'il y a une suite pratique." },
+        { profile: "contexte", label: "Le manque de détails concrets sur l'événement." },
+        { profile: "formulation", label: "La généralisation totale (« personne »)." },
+        { profile: "observateur", label: "La montée émotionnelle du studio." },
+        { profile: "acteur", label: "Savoir s'il y a une suite pratique." },
       ],
     },
     {
-      text: "Le lendemain, la même phrase choc revient partout. Vous…",
+      text: "Le lendemain, la même phrase revient partout. Vous…",
       options: [
-        { key: "A", profile: "contexte", label: "Comparez plusieurs médias pour croiser." },
-        { key: "B", profile: "formulation", label: "Vérifiez si le wording a évolué." },
-        { key: "C", profile: "observateur", label: "Mesurez si l'emballement retombe." },
-        { key: "D", profile: "acteur", label: "Décidez vite si le sujet mérite encore du temps." },
+        { profile: "contexte", label: "Comparez plusieurs médias pour croiser." },
+        { profile: "formulation", label: "Vérifiez si le wording a évolué." },
+        { profile: "observateur", label: "Mesurez si l'emballement retombe." },
+        { profile: "acteur", label: "Décidez vite si le sujet mérite encore du temps." },
       ],
     },
     {
       text: "Pour vous, le meilleur usage d'une info « choc » est de…",
       options: [
-        { key: "A", profile: "contexte", label: "Remettre de l'ordre chronologique." },
-        { key: "B", profile: "formulation", label: "Clarifier ce que la phrase exagère." },
-        { key: "C", profile: "observateur", label: "Apaiser le climat autour de vous." },
-        { key: "D", profile: "acteur", label: "Proposer la prochaine étape concrète." },
+        { profile: "contexte", label: "Remettre de l'ordre chronologique." },
+        { profile: "formulation", label: "Clarifier ce que la phrase exagère." },
+        { profile: "observateur", label: "Apaiser le climat autour de vous." },
+        { profile: "acteur", label: "Proposer la prochaine étape concrète." },
       ],
     },
   ];
@@ -157,12 +157,7 @@
         var b = document.createElement("button");
         b.type = "button";
         b.className = "answer";
-        b.innerHTML =
-          '<span class="answer__key" aria-hidden="true">' +
-          opt.key +
-          "</span><span>" +
-          opt.label +
-          "</span>";
+        b.textContent = opt.label;
         b.addEventListener("click", function () {
           state.answers.push(opt.profile);
           state.i += 1;
@@ -192,9 +187,9 @@
     if (!profile) {
       root.innerHTML =
         '<div class="panel">' +
-        "<h1>Pas encore de résultat</h1>" +
-        "<p>Lancez le quiz pour obtenir votre archétype.</p>" +
-        '<div class="actions"><a class="btn btn--coral" href="quiz.html">Démarrer le quiz</a></div>' +
+        "<h1 style=\"font-size:2rem\">Pas encore de résultat</h1>" +
+        "<p>Lancez l'outil pour obtenir votre profil.</p>" +
+        '<div class="actions"><a class="btn btn--blue" href="quiz.html">Démarrer</a></div>' +
         "</div>";
       return;
     }
@@ -206,8 +201,8 @@
       .join("");
 
     root.innerHTML =
-      '<div class="result-banner">' +
-      '<span class="result-banner__tag">Votre archétype</span>' +
+      '<div class="result-hero">' +
+      '<span class="tag">Votre profil</span>' +
       "<h1>" +
       profile.name +
       "</h1>" +
@@ -216,20 +211,20 @@
       "</p>" +
       "</div>" +
       '<article class="panel">' +
-      "<h2>En pratique</h2>" +
+      "<h2 style=\"font-size:1.5rem\">En pratique</h2>" +
       "<p>" +
       profile.body +
       "</p>" +
-      '<div class="strength-box"><h3>Vos forces</h3><ul>' +
+      '<div class="forces-box"><h3>Vos forces</h3><ul>' +
       forces +
       "</ul></div>" +
       '<div class="tip"><strong>Astuce utile</strong><p style="margin:0">' +
       profile.tip +
       "</p></div>" +
-      '<p class="note"><strong style="color:var(--ink-soft)">Important</strong> — Ce quiz est proposé à titre purement ludique. Il ne s\'agit ni d\'un diagnostic, ni d\'une évaluation scientifique, ni d\'un conseil professionnel. Les archétypes sont des simplifications destinées au divertissement.</p>' +
+      '<p class="note"><strong>Important</strong> — Cet outil est proposé à titre purement ludique. Il ne s\'agit ni d\'un diagnostic, ni d\'une évaluation scientifique, ni d\'un conseil professionnel. Les profils sont des simplifications destinées au divertissement.</p>' +
       '<div class="actions">' +
-      '<a class="btn btn--coral" href="quiz.html">Rejouer</a>' +
-      '<a class="btn btn--outline-coral" href="index.html">Accueil</a>' +
+      '<a class="btn btn--blue" href="quiz.html">Rejouer</a>' +
+      '<a class="btn btn--ghost" href="index.html">Accueil</a>' +
       "</div>" +
       "</article>";
   }
@@ -243,7 +238,5 @@
   document.addEventListener("DOMContentLoaded", function () {
     runQuiz();
     runResult();
-    var y = document.querySelector("[data-year]");
-    if (y) y.textContent = String(new Date().getFullYear());
   });
 })();

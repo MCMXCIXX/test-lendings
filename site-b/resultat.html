@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Votre archétype — Résultat | Clouds Taking Shape ApS</title>
-  <meta name="description" content="Résultat du quiz : votre archétype face aux déclarations choc.">
+  <title>Votre profil — résultat | Clouds Taking Shape ApS</title>
+  <meta name="description" content="Résultat ludique de l'outil Clouds Taking Shape ApS face aux déclarations choc.">
+  <meta name="theme-color" content="#2b59ff">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#f7f3ec">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
@@ -18,22 +18,21 @@
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
-  <header class="topbar">
-    <div class="topbar__inner">
+  <header class="bar">
+    <div class="bar__inner">
       <a class="logo" href="index.html">
         <span class="logo__mark" aria-hidden="true">C</span>
         <span>Clouds Taking Shape ApS</span>
       </a>
       <nav class="menu" aria-label="Navigation principale">
-        <a href="quiz.html">Le quiz</a>
+        <a href="quiz.html">Quiz</a>
         <a href="index.html#profils">Profils</a>
         <a href="contact.html">Contact</a>
-        <a class="menu__legal" href="mentions-legales.html">Mentions légales</a>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="page">
+  <main id="main" class="result">
     <div class="wrap-sm" id="result-app"></div>
   </main>
 
@@ -41,7 +40,6 @@
     <div class="foot__grid">
       <div>
         <p class="foot__title">Clouds Taking Shape ApS</p>
-        <p>Forme juridique : ApS</p>
         <p>CVR : 41405244</p>
         <p>Nydamsvej 17, 8362 Hørning, Denmark</p>
         <p><a href="tel:+451025888908">+45 10 25 88 89 08</a></p>
@@ -60,18 +58,18 @@
         <p class="foot__col-title">Navigation</p>
         <ul class="foot__links">
           <li><a href="index.html">Accueil</a></li>
-          <li><a href="quiz.html">Le quiz</a></li>
-          <li><a href="index.html#profils">Les profils</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
     <div class="foot__bottom">
       <span>© <span data-year>2026</span> Clouds Taking Shape ApS. Tous droits réservés.</span>
-      <span>Site à titre ludique — voir <a href="conditions.html">les conditions</a>.</span>
+      <span>Site à titre ludique.</span>
     </div>
   </footer>
 
+  <script src="js/main.js"></script>
   <script src="js/quiz.js"></script>
 </body>
 </html>

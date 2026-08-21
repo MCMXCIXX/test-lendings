@@ -1,7 +1,13 @@
+/**
+ * Site B — shared helpers
+ */
 (function () {
   "use strict";
+
   document.addEventListener("DOMContentLoaded", function () {
-    var y = document.querySelector("[data-year]");
-    if (y) y.textContent = String(new Date().getFullYear());
+    var yearEl = document.querySelector("[data-year]");
+    if (yearEl) {
+      yearEl.textContent = String(new Date().getFullYear());
+    }
   });
 })();

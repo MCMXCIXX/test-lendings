@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quiz interactif — 5 questions · 2 min | Clouds Taking Shape ApS</title>
-  <meta name="description" content="Démarrez le quiz : cinq questions sur votre réflexe face à une déclaration choc à l'antenne.">
-  <meta name="theme-color" content="#f7f3ec">
+  <title>Quiz 2 min — déclaration choc à l'antenne | Clouds Taking Shape ApS</title>
+  <meta name="description" content="Cinq questions rapides pour révéler votre réflexe quand une déclaration choc retentit et choque toute la France.">
+  <meta name="theme-color" content="#2b59ff">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
@@ -17,36 +17,34 @@
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
-  <header class="topbar">
-    <div class="topbar__inner">
+  <header class="bar">
+    <div class="bar__inner">
       <a class="logo" href="index.html">
         <span class="logo__mark" aria-hidden="true">C</span>
         <span>Clouds Taking Shape ApS</span>
       </a>
       <nav class="menu" aria-label="Navigation principale">
-        <a href="quiz.html" aria-current="page">Le quiz</a>
+        <a href="quiz.html" aria-current="page">Quiz</a>
         <a href="index.html#profils">Profils</a>
         <a href="contact.html">Contact</a>
-        <a class="menu__legal" href="mentions-legales.html">Mentions légales</a>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="page">
+  <main id="main" class="quiz">
     <div class="wrap-sm" id="quiz-app">
-      <a class="back" href="index.html">← Retour</a>
-      <div class="panel">
-        <p class="kicker" style="margin-bottom:1rem">Quiz · 5 questions · 2 min</p>
-        <div class="progress">
-          <div class="progress__row">
+      <a class="back" href="index.html">← Accueil</a>
+      <div class="quiz-card">
+        <div class="prog" aria-live="polite">
+          <div class="prog__row">
             <span id="prog-label">Question 1 / 5</span>
             <span id="prog-pct">0 %</span>
           </div>
-          <div class="progress__track" id="prog-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div class="progress__bar" id="bar"></div>
+          <div class="prog__track" id="prog-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="prog__bar" id="bar"></div>
           </div>
         </div>
-        <h1 class="sr-only">Quiz</h1>
+        <h1 class="sr-only">Quiz interactif</h1>
         <p class="q-title" id="q-text"></p>
         <div class="answers" id="answers" role="group" aria-label="Réponses"></div>
       </div>
@@ -57,7 +55,6 @@
     <div class="foot__grid">
       <div>
         <p class="foot__title">Clouds Taking Shape ApS</p>
-        <p>Forme juridique : ApS</p>
         <p>CVR : 41405244</p>
         <p>Nydamsvej 17, 8362 Hørning, Denmark</p>
         <p><a href="tel:+451025888908">+45 10 25 88 89 08</a></p>
@@ -76,18 +73,18 @@
         <p class="foot__col-title">Navigation</p>
         <ul class="foot__links">
           <li><a href="index.html">Accueil</a></li>
-          <li><a href="quiz.html">Le quiz</a></li>
-          <li><a href="index.html#profils">Les profils</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
     <div class="foot__bottom">
       <span>© <span data-year>2026</span> Clouds Taking Shape ApS. Tous droits réservés.</span>
-      <span>Site à titre ludique — voir <a href="conditions.html">les conditions</a>.</span>
+      <span>Site à titre ludique.</span>
     </div>
   </footer>
 
+  <script src="js/main.js"></script>
   <script src="js/quiz.js"></script>
 </body>
 </html>

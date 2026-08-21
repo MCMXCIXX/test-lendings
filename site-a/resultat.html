@@ -3,69 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Votre lecture — résultat du parcours | Bondeskovgaard Cleaning ApS</title>
-  <meta name="description" content="Résultat ludique de votre lecture face aux déclarations choc à l'antenne — Bondeskovgaard Cleaning ApS.">
-  <meta name="theme-color" content="#0a7a6e">
+  <title>Votre lecture — Résultat du quiz | Bondeskovgaard Cleaning ApS</title>
   <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#8b1e3f">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;0,700;1,600&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
-  <a class="skip-link" href="#contenu">Aller au contenu</a>
-
-  <header class="mast">
-    <div class="mast__inner">
-      <a class="brand" href="index.html">
-        <span class="brand__code">Dossier · FR</span>
-        <span class="brand__name">Bondeskovgaard Cleaning ApS</span>
-      </a>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <header class="masthead">
+    <div class="wrap">
+      <div class="masthead__top"><span>Édition France</span><span>Résultat</span><span>bondeskovgaardaps.com</span></div>
+      <a class="masthead__brand" href="index.html">Bondeskovgaard Cleaning ApS</a>
       <nav class="nav" aria-label="Navigation principale">
         <a href="index.html">Accueil</a>
-        <a href="quiz.html">Parcours</a>
+        <a href="quiz.html">Quiz</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
-
-  <main id="contenu" class="result-page">
-    <div class="wrap-sm" id="result-root"></div>
-  </main>
-
+  <main id="contenu" class="page"><div class="wrap--n" id="result-app"></div></main>
   <footer class="foot">
     <div class="foot__grid">
       <div>
         <p class="foot__brand">Bondeskovgaard Cleaning ApS</p>
-        <p class="foot__meta">
-          CVR&nbsp;: 32831583<br>
-          Hestehavevej 40, 4320 Lejre<br>
-          Tél.&nbsp;: <a href="tel:+4546496027">+45 46 49 60 27</a><br>
-          E-mail&nbsp;: <a href="mailto:Matthias@bondeskovgaardaps.com">Matthias@bondeskovgaardaps.com</a>
-        </p>
+        <p>CVR&nbsp;: 32831583<br>Hestehavevej 40, 4320 Lejre<br><a href="mailto:Matthias@bondeskovgaardaps.com">Matthias@bondeskovgaardaps.com</a></p>
       </div>
-      <div>
-        <ul class="foot-links">
-          <li><a href="cookies.html">Politique relative aux cookies</a></li>
-          <li><a href="confidentialite.html">Politique de confidentialité</a></li>
-          <li><a href="conditions.html">Conditions d'utilisation</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="cookies.html#parametres">Paramètres des cookies</a></li>
-        </ul>
-      </div>
+      <ul class="foot__links">
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="cookies.html">Cookies</a></li>
+        <li><a href="conditions.html">Conditions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-    <div class="foot__bottom">
-      <span>© <span data-year>2026</span> Bondeskovgaard Cleaning ApS — Tous droits réservés</span>
-      <a href="https://bondeskovgaardaps.com">https://bondeskovgaardaps.com</a>
-    </div>
+    <div class="foot__bottom"><span>© <span data-year>2026</span> Bondeskovgaard Cleaning ApS</span><span>Site à titre ludique</span></div>
   </footer>
-
-  <script src="js/main.js"></script>
   <script src="js/quiz.js"></script>
 </body>
 </html>

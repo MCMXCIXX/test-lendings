@@ -1,34 +1,25 @@
-# Test Lendings
+# Test Lendings (v3 — Mogul uniqueness pass)
 
-Two unique French personality-quiz white pages + a chooser hub for GitHub Pages.
+Two French quiz white pages: **same campaign pattern**, **new identities** (not restyles of the old live sites).
 
-## Live demo
+## Live
 
-After enabling GitHub Pages (Settings → Pages → Deploy from branch `main` / root):
+https://mcmxcixx.github.io/test-lendings/
 
-**https://mcmxcixx.github.io/test-lendings/**
+| Path | Site |
+|------|------|
+| `/` | Chooser hub |
+| `/site-a/` | Bondeskovgaard — broadsheet / wine |
+| `/site-b/` | Clouds Taking Shape — lime utility / white header |
 
-- Hub chooser: `/`
-- Site A: `/site-a/`
-- Site B: `/site-b/`
+## Pattern kept
 
-## Structure
+- 5-question quiz → 4 profiles
+- Ad language: choc / France / antenne / hier soir
+- Real Danish ApS legal data
+- FR only + legal pages
 
-```
-index.html      ← beautiful chooser (pick A or B)
-hub.css
-site-a/         ← Bondeskovgaard Cleaning ApS (dark elegant)
-site-b/         ← Clouds Taking Shape ApS (light airy)
-```
+## What changed vs old live
 
-## Local preview
-
-```bash
-npx serve . -l 5175
-```
-
-Open http://localhost:5175
-
-## Stack
-
-Pure HTML + CSS + vanilla JS. No build step.
+- **A:** newspaper masthead + ruled profiles + wine (not dark amber evening news)
+- **B:** quiz-first lime band + white sticky header + bento + 2×2 answers (not black header + coral cream)

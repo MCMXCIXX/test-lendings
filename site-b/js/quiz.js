@@ -1,242 +1,180 @@
 /**
- * Clouds Taking Shape ApS — Quiz engine (Site B)
- * Soft module UI (no A–D letter circles)
+ * Site B — Utility quiz (lime / white)
  */
 (function () {
   "use strict";
-
-  var KEY = "cts_tool_result_v2";
+  var KEY = "cts_lime_v3";
 
   var PROFILES = {
     contexte: {
-      id: "contexte",
       name: "Chercheur de contexte",
-      blurb: "Vous cartographiez la scène avant d'ouvrir le débat.",
-      body: "Quand une info se présente comme un électrochoc national, vous freinez. Votre priorité : source, déroulé, cadre. Ce n'est pas de la lenteur — c'est votre façon de rester lucide pendant que le plateau s'emballe.",
-      forces: ["Méthode sous tension", "Résistance au buzz incomplet", "Goût du croisement de sources"],
-      tip: "Limitez-vous à trois sources pour croiser. Au-delà, la curiosité se dilue.",
+      blurb: "Vous cartographiez d'abord la scène.",
+      body: "Dès qu'une info « choc » circule à l'antenne, vous voulez la chronologie et la source. Ce n'est pas du doute pour le doute : c'est votre façon de consommer l'actualité avec méthode.",
+      forces: ["Méthode sous buzz", "Résilience face au flux", "Goût du fact-checking"],
+      tip: "Trois sources max pour croiser — au-delà, la curiosité devient dispersion.",
     },
     formulation: {
-      id: "formulation",
       name: "Vérificateur de formulation",
-      blurb: "Vous pesez les mots avant d'avaler le récit.",
-      body: "Une tournure trop absolue active votre filtre. Vous séparez ce qui est dit, ce qui est soufflé et ce qui est dramatisé. Votre super-pouvoir : rendre l'annonce mesurable.",
-      forces: ["Précision linguistique", "Radar anti-hyperbole", "Lecture critique du ton"],
-      tip: "Réécrivez la phrase sans adjectifs spectaculaires. Si elle tombe à plat, la formulation portait l'émotion.",
+      blurb: "Vous décortiquez les mots et l'ampleur.",
+      body: "Une tournure trop absolue (« toute la France ») active votre radar. Vous séparez dit, sous-entendu et dramatisé. Votre force : rendre l'annonce mesurable.",
+      forces: ["Précision linguistique", "Sens des hyperboles", "Lecture critique du ton"],
+      tip: "Réécrivez la phrase sans adjectifs spectaculaires. Si elle s'affaiblit, la formulation portait l'émotion.",
     },
     observateur: {
-      id: "observateur",
       name: "Observateur calme",
-      blurb: "Vous regardez la vague passer avant d'y plonger.",
-      body: "Vous utilisez les réactions collectives comme baromètre. Ce recul vous protège de la contagion émotionnelle du direct. Vous parlez plus tard — souvent plus juste.",
-      forces: ["Calme émotionnel", "Lecture des dynamiques", "Timing stratégique"],
-      tip: "Lancez un minuteur de 15 minutes avant tout commentaire public sur une annonce explosive.",
+      blurb: "Vous laissez le bruit retomber avant d'agir.",
+      body: "Vous observez les réactions collectives comme un baromètre. Ce recul vous protège de la contagion émotionnelle du direct.",
+      forces: ["Calme émotionnel", "Lecture des dynamiques", "Patience stratégique"],
+      tip: "Minuteur de 20 minutes avant tout commentaire public sur une annonce explosive.",
     },
     acteur: {
-      id: "acteur",
       name: "Acteur pratique",
-      blurb: "Vous convertissez l'info en décision utile — ou vous zappez.",
-      body: "Votre filtre est simple : ça change quelque chose pour moi ? Si non, vous économisez votre attention. Si oui, vous passez à l'action. L'utilité gagne toujours sur le spectacle.",
+      blurb: "Vous transformez l'info en décision utile — ou vous passez.",
+      body: "Vous filtrez vite : cette déclaration change-t-elle quelque chose pour vous ? Sinon, vous économisez votre attention.",
       forces: ["Efficacité", "Tri signal / bruit", "Orientation action"],
-      tip: "Écrivez une micro-action de 5 minutes. Si rien ne vient, classez le sujet.",
+      tip: "Écrivez une action de 5 minutes. Si vous n'en trouvez aucune, classez le sujet.",
     },
   };
 
   var QUESTIONS = [
     {
-      text: "On annonce à l'antenne qu'une déclaration a « choqué toute la France ». Votre premier mouvement ?",
+      text: "On annonce qu'une déclaration a « choqué toute la France » à l'antenne. Premier réflexe ?",
       options: [
-        { profile: "contexte", label: "Je remonte à la source et au déroulé exact." },
-        { profile: "formulation", label: "Je questionne l'expression « toute la France »." },
-        { profile: "observateur", label: "Je regarde d'abord comment les autres réagissent." },
-        { profile: "acteur", label: "Je me demande si cela impacte ma journée." },
+        { k: "A", p: "contexte", t: "Je remonte à la source et au déroulé." },
+        { k: "B", p: "formulation", t: "Je questionne « toute la France »." },
+        { k: "C", p: "observateur", t: "Je regarde d'abord les réactions." },
+        { k: "D", p: "acteur", t: "Je checke l'impact sur ma journée." },
       ],
     },
     {
-      text: "On vous presse de réagir tout de suite. Vous…",
+      text: "On vous presse de réagir à la déclaration choc. Vous…",
       options: [
-        { profile: "contexte", label: "Demandez les faits bruts avant tout avis." },
-        { profile: "formulation", label: "Signalez ce qui est affirmé sans preuve." },
-        { profile: "observateur", label: "Préférez écouter encore un peu." },
-        { profile: "acteur", label: "Répondez surtout via les conséquences utiles." },
+        { k: "A", p: "contexte", t: "Demandez les faits bruts." },
+        { k: "B", p: "formulation", t: "Signalez ce qui manque de preuve." },
+        { k: "C", p: "observateur", t: "Écoutez encore un peu." },
+        { k: "D", p: "acteur", t: "Parlez surtout des suites utiles." },
       ],
     },
     {
-      text: "Le plateau martèle : « Personne n'en revient. » Qu'est-ce qui vous accroche ?",
+      text: "« Personne n'en revient » — qu'est-ce qui vous marque ?",
       options: [
-        { profile: "contexte", label: "Le manque de détails concrets sur l'événement." },
-        { profile: "formulation", label: "La généralisation totale (« personne »)." },
-        { profile: "observateur", label: "La montée émotionnelle du studio." },
-        { profile: "acteur", label: "Savoir s'il y a une suite pratique." },
+        { k: "A", p: "contexte", t: "Le manque de détails concrets." },
+        { k: "B", p: "formulation", t: "La généralisation totale." },
+        { k: "C", p: "observateur", t: "La montée émotionnelle du plateau." },
+        { k: "D", p: "acteur", t: "Savoir s'il y a une suite pratique." },
       ],
     },
     {
-      text: "Le lendemain, la même phrase revient partout. Vous…",
+      text: "Le lendemain, la même phrase choc revient partout. Vous…",
       options: [
-        { profile: "contexte", label: "Comparez plusieurs médias pour croiser." },
-        { profile: "formulation", label: "Vérifiez si le wording a évolué." },
-        { profile: "observateur", label: "Mesurez si l'emballement retombe." },
-        { profile: "acteur", label: "Décidez vite si le sujet mérite encore du temps." },
+        { k: "A", p: "contexte", t: "Comparez plusieurs médias." },
+        { k: "B", p: "formulation", t: "Vérifiez si le wording a bougé." },
+        { k: "C", p: "observateur", t: "Mesurez si l'emballement retombe." },
+        { k: "D", p: "acteur", t: "Décidez si ça mérite encore du temps." },
       ],
     },
     {
-      text: "Pour vous, le meilleur usage d'une info « choc » est de…",
+      text: "Le meilleur usage d'une info qui a choqué la France, pour vous ?",
       options: [
-        { profile: "contexte", label: "Remettre de l'ordre chronologique." },
-        { profile: "formulation", label: "Clarifier ce que la phrase exagère." },
-        { profile: "observateur", label: "Apaiser le climat autour de vous." },
-        { profile: "acteur", label: "Proposer la prochaine étape concrète." },
+        { k: "A", p: "contexte", t: "Remettre de l'ordre chronologique." },
+        { k: "B", p: "formulation", t: "Clarifier ce que la phrase exagère." },
+        { k: "C", p: "observateur", t: "Apaiser le climat autour de vous." },
+        { k: "D", p: "acteur", t: "Proposer la prochaine étape concrète." },
       ],
     },
   ];
 
-  function score(answers) {
+  function score(ans) {
     var t = { contexte: 0, formulation: 0, observateur: 0, acteur: 0 };
-    answers.forEach(function (id) {
-      if (t[id] !== undefined) t[id] += 1;
-    });
+    ans.forEach(function (id) { if (t[id] !== undefined) t[id]++; });
     var order = ["contexte", "formulation", "observateur", "acteur"];
-    var winner = order[0];
-    var max = -1;
-    order.forEach(function (id) {
-      if (t[id] > max) {
-        max = t[id];
-        winner = id;
-      }
-    });
-    return { winner: winner, tallies: t };
+    var w = order[0], m = -1;
+    order.forEach(function (id) { if (t[id] > m) { m = t[id]; w = id; } });
+    return w;
   }
 
   function save(id) {
-    try {
-      sessionStorage.setItem(KEY, JSON.stringify({ profileId: id, at: Date.now() }));
-    } catch (e) {}
+    try { sessionStorage.setItem(KEY, JSON.stringify({ id: id })); } catch (e) {}
   }
-
   function load() {
-    try {
-      var raw = sessionStorage.getItem(KEY);
-      return raw ? JSON.parse(raw) : null;
-    } catch (e) {
-      return null;
-    }
+    try { var r = sessionStorage.getItem(KEY); return r ? JSON.parse(r) : null; } catch (e) { return null; }
   }
-
-  function $(id) {
-    return document.getElementById(id);
-  }
+  function $(id) { return document.getElementById(id); }
 
   function runQuiz() {
     if (!$("quiz-app")) return;
     var state = { i: 0, answers: [] };
-    var bar = $("bar");
-    var label = $("prog-label");
-    var pct = $("prog-pct");
-    var qEl = $("q-text");
-    var aEl = $("answers");
-    var track = $("prog-track");
+    var qEl = $("q");
+    var ans = $("ans");
+    var dots = $("dots");
+    var label = $("lab");
 
-    function progress() {
-      var total = QUESTIONS.length;
-      var p = Math.round((state.i / total) * 100);
-      if (bar) bar.style.width = p + "%";
-      if (label) label.textContent = "Question " + (state.i + 1) + " / " + total;
-      if (pct) pct.textContent = p + " %";
-      if (track) track.setAttribute("aria-valuenow", String(p));
+    function paintDots() {
+      if (!dots) return;
+      dots.innerHTML = "";
+      for (var n = 0; n < QUESTIONS.length; n++) {
+        var d = document.createElement("span");
+        d.className = "dot" + (n < state.i ? " is-done" : n === state.i ? " is-on" : "");
+        dots.appendChild(d);
+      }
     }
 
     function paint() {
       var q = QUESTIONS[state.i];
-      progress();
-      qEl.classList.remove("q-title");
+      paintDots();
+      if (label) label.textContent = (state.i + 1) + " / " + QUESTIONS.length;
+      qEl.classList.remove("q");
       void qEl.offsetWidth;
-      qEl.classList.add("q-title");
+      qEl.classList.add("q");
       qEl.textContent = q.text;
-      aEl.innerHTML = "";
-      q.options.forEach(function (opt) {
+      ans.innerHTML = "";
+      q.options.forEach(function (o) {
         var b = document.createElement("button");
         b.type = "button";
-        b.className = "answer";
-        b.textContent = opt.label;
+        b.className = "ans";
+        b.innerHTML = '<span class="ans__k">' + o.k + "</span><span>" + o.t + "</span>";
         b.addEventListener("click", function () {
-          state.answers.push(opt.profile);
-          state.i += 1;
+          state.answers.push(o.p);
+          state.i++;
           if (state.i >= QUESTIONS.length) {
-            if (bar) bar.style.width = "100%";
-            if (pct) pct.textContent = "100 %";
-            save(score(state.answers).winner);
-            window.location.href = "resultat.html";
-          } else {
-            paint();
-          }
+            save(score(state.answers));
+            location.href = "resultat.html";
+          } else paint();
         });
-        aEl.appendChild(b);
+        ans.appendChild(b);
       });
     }
-
     paint();
   }
 
   function runResult() {
     var root = $("result-app");
     if (!root) return;
-    var stored = load();
-    var id = stored && stored.profileId;
-    var profile = id && PROFILES[id] ? PROFILES[id] : null;
-
-    if (!profile) {
-      root.innerHTML =
-        '<div class="panel">' +
-        "<h1 style=\"font-size:2rem\">Pas encore de résultat</h1>" +
-        "<p>Lancez l'outil pour obtenir votre profil.</p>" +
-        '<div class="actions"><a class="btn btn--blue" href="quiz.html">Démarrer</a></div>' +
-        "</div>";
+    var s = load();
+    var p = s && PROFILES[s.id] ? PROFILES[s.id] : null;
+    if (!p) {
+      root.innerHTML = '<div class="panel"><h1>Pas encore de résultat</h1><p>Lancez le quiz pour obtenir votre archétype.</p><div class="actions"><a class="btn btn--lime" href="quiz.html">Commencer le quiz</a></div></div>';
       return;
     }
-
-    var forces = profile.forces
-      .map(function (f) {
-        return "<li>" + f + "</li>";
-      })
-      .join("");
-
+    var forces = p.forces.map(function (f) { return "<li>" + f + "</li>"; }).join("");
     root.innerHTML =
-      '<div class="result-hero">' +
-      '<span class="tag">Votre profil</span>' +
-      "<h1>" +
-      profile.name +
-      "</h1>" +
-      "<p>" +
-      profile.blurb +
-      "</p>" +
-      "</div>" +
-      '<article class="panel">' +
-      "<h2 style=\"font-size:1.5rem\">En pratique</h2>" +
-      "<p>" +
-      profile.body +
-      "</p>" +
-      '<div class="forces-box"><h3>Vos forces</h3><ul>' +
+      '<div style="text-align:center;margin-bottom:1.5rem"><span class="result-tag">Votre archétype</span><h1>' +
+      p.name +
+      "</h1><p>" +
+      p.blurb +
+      '</p></div><article class="panel"><h2>En pratique</h2><p>' +
+      p.body +
+      '</p><h3>Vos forces</h3><ul class="force-list">' +
       forces +
-      "</ul></div>" +
-      '<div class="tip"><strong>Astuce utile</strong><p style="margin:0">' +
-      profile.tip +
-      "</p></div>" +
-      '<p class="note"><strong>Important</strong> — Cet outil est proposé à titre purement ludique. Il ne s\'agit ni d\'un diagnostic, ni d\'une évaluation scientifique, ni d\'un conseil professionnel. Les profils sont des simplifications destinées au divertissement.</p>' +
-      '<div class="actions">' +
-      '<a class="btn btn--blue" href="quiz.html">Rejouer</a>' +
-      '<a class="btn btn--ghost" href="index.html">Accueil</a>' +
-      "</div>" +
-      "</article>";
+      '</ul><div class="tip"><strong>Astuce utile</strong><p style="margin:0;color:var(--ink);font-weight:600">' +
+      p.tip +
+      '</p></div><p class="note"><strong style="color:var(--ink)">Avertissement</strong> — Quiz purement ludique. Pas de diagnostic, pas de conseil professionnel.</p><div class="actions"><a class="btn btn--lime" href="quiz.html">Rejouer</a><a class="btn btn--ghost" href="index.html">Accueil</a></div></article>';
   }
-
-  window.CTSQuiz = {
-    PROFILES: PROFILES,
-    QUESTIONS: QUESTIONS,
-    score: score,
-  };
 
   document.addEventListener("DOMContentLoaded", function () {
     runQuiz();
     runResult();
+    var y = document.querySelector("[data-year]");
+    if (y) y.textContent = String(new Date().getFullYear());
   });
 })();

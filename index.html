@@ -1,60 +1,57 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Test Lendings — deux sites uniques</title>
-  <meta name="description" content="Hub de prévisualisation : deux landers quiz français distincts — Bondeskovgaard Cleaning ApS et Clouds Taking Shape ApS.">
-  <meta name="theme-color" content="#0b0d12">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='16' height='32' fill='%230a7a6e'/%3E%3Crect x='16' width='16' height='32' fill='%232b59ff'/%3E%3C/svg%3E">
+  <title>Test Lendings — Choose a site</title>
+  <meta name="description" content="Two unique French quiz landers rebuilt for ad relevance. Pick Site A or Site B.">
+  <meta name="theme-color" content="#12150f">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="hub.css">
 </head>
 <body>
-  <a class="skip" href="#choose">Aller aux sites</a>
-
+  <a class="skip" href="#choose">Skip to sites</a>
+  <div class="noise" aria-hidden="true"></div>
   <header class="mast">
     <p class="mast__mark">Test Lendings</p>
-    <h1 class="mast__title">Deux agences.<br>Deux systèmes.</h1>
-    <p class="mast__sub">Même brief quiz (5 questions · 4 profils · FR) — identités visuelles et voix totalement séparées.</p>
+    <p class="mast__sub">Same quiz pattern · Two new identities</p>
   </header>
-
   <main id="choose" class="split">
     <a class="door door--a" href="site-a/index.html">
+      <div class="door__glow" aria-hidden="true"></div>
       <div class="door__inner">
-        <span class="door__code">Site A</span>
-        <p class="door__kicker">Laboratoire d'écoute</p>
+        <span class="door__code">01</span>
+        <p class="door__kicker">Broadsheet · encre + bordeaux</p>
         <h2 class="door__title">Bondeskovgaard<br>Cleaning ApS</h2>
-        <p class="door__desc">Papier froid · teal · mono labels · chronologie de profils · ton dossier</p>
+        <p class="door__desc">Newspaper masthead · ruled profiles · serif editorial · wine accent — not the old dark amber page.</p>
         <ul class="door__tags">
-          <li>Bricolage + Source Serif</li>
-          <li>Timeline</li>
-          <li>Indices 01–04</li>
+          <li>Newsreader</li>
+          <li>Ruled list</li>
+          <li>Ad H1</li>
         </ul>
-        <span class="door__cta">Ouvrir Site A →</span>
+        <span class="door__cta">Enter Site A <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </div>
     </a>
-
     <a class="door door--b" href="site-b/index.html">
+      <div class="door__glow" aria-hidden="true"></div>
       <div class="door__inner">
-        <span class="door__code">Site B</span>
-        <p class="door__kicker">Affiche outil 2 min</p>
+        <span class="door__code">02</span>
+        <p class="door__kicker">Utility · lime on white</p>
         <h2 class="door__title">Clouds Taking<br>Shape ApS</h2>
-        <p class="door__desc">Blanc brut · bleu électrique · typo poster · accordion · modules soft quiz</p>
+        <p class="door__desc">Quiz-first lime band · white sticky header · bento profiles · 2×2 answers — not the old black-header coral page.</p>
         <ul class="door__tags">
-          <li>Archivo Black</li>
-          <li>Accordion</li>
-          <li>Tap modules</li>
+          <li>Syne</li>
+          <li>Bento</li>
+          <li>2 min</li>
         </ul>
-        <span class="door__cta">Ouvrir Site B →</span>
+        <span class="door__cta">Enter Site B <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </div>
     </a>
   </main>
-
   <footer class="foot">
-    <p>FR · déclaration choc / antenne · GitHub Pages</p>
+    <p>French personality quiz · déclaration choc / France / antenne · GitHub Pages</p>
   </footer>
 </body>
 </html>

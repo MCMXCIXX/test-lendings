@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Déclaration choc à l'antenne — outil 2 min pour lire votre réflexe | Clouds Taking Shape ApS</title>
-  <meta name="description" content="Une phrase a choqué toute la France à l'antenne ? En 2 minutes et 5 questions, cet outil ludique révèle votre posture face à l'info choc — Clouds Taking Shape ApS.">
-  <meta name="theme-color" content="#2b59ff">
+  <title>Tout le monde a été choqué par la déclaration du jour — et vous ? Quiz 2 min | Clouds Taking Shape ApS</title>
+  <meta name="description" content="Une déclaration choc à l'antenne a choqué toute la France. En 5 questions et 2 minutes, découvrez votre réflexe — outil ludique Clouds Taking Shape ApS.">
+  <meta name="theme-color" content="#b8f200">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://cloudstakingshape.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
@@ -19,12 +19,9 @@
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
 
-  <header class="bar">
-    <div class="bar__inner">
-      <a class="logo" href="index.html">
-        <span class="logo__mark" aria-hidden="true">C</span>
-        <span>Clouds Taking Shape ApS</span>
-      </a>
+  <header class="top">
+    <div class="top__in">
+      <a class="logo" href="index.html"><span class="logo__dot" aria-hidden="true"></span><span>Clouds Taking Shape ApS</span></a>
       <nav class="menu" aria-label="Navigation principale">
         <a href="quiz.html">Quiz</a>
         <a href="#profils">Profils</a>
@@ -34,122 +31,79 @@
   </header>
 
   <main id="main">
+    <!-- Quiz-first band: different section order from Site A and old Clouds -->
+    <section class="start-band" aria-label="Démarrage rapide">
+      <div class="wrap start-band__in">
+        <div>
+          <h1>Prêt en 2 minutes</h1>
+          <p>Cinq questions sur votre réflexe face à une déclaration choc.</p>
+        </div>
+        <a class="btn btn--ink" href="quiz.html">Commencer le quiz</a>
+      </div>
+    </section>
+
     <section class="hero">
       <div class="wrap">
-        <p class="hero__stamp">
-          <span class="hero__stamp-dot" aria-hidden="true"></span>
-          France · outil interactif
-        </p>
-        <h1>Votre réflexe face à une <span>phrase choc</span> en direct&nbsp;?</h1>
-        <p class="hero__lead">Cinq questions chronométrées pour capter l'instinct — pas la posture. Quand l'actualité «&nbsp;choque toute la France&nbsp;», chacun réagit autrement. Cet outil le rend visible en moins de deux minutes.</p>
+        <p class="pill">France · interactif · ludique</p>
+        <h1 style="margin-top:1rem">Tout le monde a été choqué par <span class="hl">la déclaration du jour</span>. Quelle est votre posture&nbsp;?</h1>
+        <p class="hero__lead">Quand une phrase retentit à l'antenne et «&nbsp;choque toute la France&nbsp;», quatre stratégies apparaissent. Cet outil les rend visibles — sans jugement, juste un miroir rapide.</p>
         <div class="hero__row">
-          <a class="btn btn--blue" href="quiz.html">Lancer l'outil →</a>
-          <a class="btn btn--ghost" href="#profils">Déplier les profils</a>
+          <a class="btn btn--lime" href="quiz.html">Commencer le quiz</a>
+          <a class="btn btn--ghost" href="#profils">Voir les profils</a>
         </div>
-        <div class="hero__meta">
-          <span class="chip chip--dark">5 questions</span>
-          <span class="chip">≈ 2 minutes</span>
-          <span class="chip">cloudstakingshape.com</span>
+        <div class="meta-row">
+          <span class="pill">5 questions</span>
+          <span class="pill">≈ 2 min</span>
+          <span class="pill">cloudstakingshape.com</span>
         </div>
+        <p class="trust" style="margin-top:1.25rem"><strong>Clouds Taking Shape ApS</strong> — site à titre ludique</p>
       </div>
     </section>
 
-    <section class="block block--ink" aria-labelledby="speed-title">
+    <section class="block block--panel" id="profils" aria-labelledby="p-title">
       <div class="wrap">
         <div class="block__head">
-          <p class="kicker">Pourquoi cet outil</p>
-          <h2 id="speed-title">Lire l'info plus vite, sans se faire emporter</h2>
-          <p>Pas de classement moral. Juste un miroir ludique de votre stratégie spontanée quand une déclaration retentit et s'impose comme événement national.</p>
+          <p class="kicker">Quatre postures</p>
+          <h2 id="p-title">Le même choc. Quatre réflexes.</h2>
+          <p>Pas de bon ou mauvais profil — seulement des façons différentes de digérer une déclaration choc.</p>
         </div>
-        <div class="speed">
-          <div class="speed__card">
-            <strong>01</strong>
-            <h3>Choisir vite</h3>
-            <p>Répondez au premier élan — c'est lui qui compte.</p>
-          </div>
-          <div class="speed__card">
-            <strong>02</strong>
-            <h3>Voir le schéma</h3>
-            <p>Quatre postures possibles, une dominante claire.</p>
-          </div>
-          <div class="speed__card">
-            <strong>03</strong>
-            <h3>Garder une astuce</h3>
-            <p>Une piste concrète pour la prochaine vague médiatique.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="block" id="profils" aria-labelledby="profils-title">
-      <div class="wrap-sm">
-        <div class="block__head">
-          <p class="kicker">Profils</p>
-          <h2 id="profils-title">Quatre stratégies — dépliez pour lire</h2>
-          <p>Même plateau, même tension. Des façons différentes de digérer le choc. Touchez une ligne pour ouvrir le détail.</p>
-        </div>
-
-        <div class="acc">
-          <details class="acc__item" open>
-            <summary>
-              <span class="acc__left">
-                <span class="acc__n" aria-hidden="true">1</span>
-                <span>Chercheur de contexte</span>
-              </span>
-              <span class="acc__chev" aria-hidden="true">+</span>
-            </summary>
-            <div class="acc__body">
-              <p>Vous voulez la scène complète avant toute prise de position. Chronologie, source, cadre&nbsp;: le buzz attend.</p>
-            </div>
-          </details>
-          <details class="acc__item">
-            <summary>
-              <span class="acc__left">
-                <span class="acc__n" aria-hidden="true">2</span>
-                <span>Vérificateur de formulation</span>
-              </span>
-              <span class="acc__chev" aria-hidden="true">+</span>
-            </summary>
-            <div class="acc__body">
-              <p>Vous décortiquez les mots. Une hyperbole trop large et votre radar s'allume.</p>
-            </div>
-          </details>
-          <details class="acc__item">
-            <summary>
-              <span class="acc__left">
-                <span class="acc__n" aria-hidden="true">3</span>
-                <span>Observateur calme</span>
-              </span>
-              <span class="acc__chev" aria-hidden="true">+</span>
-            </summary>
-            <div class="acc__body">
-              <p>Vous laissez le tumulte passer. Votre avis arrive après le pic d'émotion collective.</p>
-            </div>
-          </details>
-          <details class="acc__item">
-            <summary>
-              <span class="acc__left">
-                <span class="acc__n" aria-hidden="true">4</span>
-                <span>Acteur pratique</span>
-              </span>
-              <span class="acc__chev" aria-hidden="true">+</span>
-            </summary>
-            <div class="acc__body">
-              <p>Vous filtrez par utilité&nbsp;: est-ce que ça change quelque chose pour vous&nbsp;? Sinon, next.</p>
-            </div>
-          </details>
+        <div class="bento">
+          <article class="bento__card">
+            <div class="bento__n" aria-hidden="true">01</div>
+            <h3>Chercheur de contexte</h3>
+            <p>Comprendre ce qui s'est passé avant de juger.</p>
+            <div class="tags"><span class="tag">curiosité</span><span class="tag">méthode</span></div>
+          </article>
+          <article class="bento__card">
+            <div class="bento__n" aria-hidden="true">02</div>
+            <h3>Vérificateur de formulation</h3>
+            <p>Peser les mots et l'ampleur des affirmations.</p>
+            <div class="tags"><span class="tag">précision</span><span class="tag">langage</span></div>
+          </article>
+          <article class="bento__card">
+            <div class="bento__n" aria-hidden="true">03</div>
+            <h3>Observateur calme</h3>
+            <p>Laisser le bruit retomber avant d'entrer.</p>
+            <div class="tags"><span class="tag">calme</span><span class="tag">timing</span></div>
+          </article>
+          <article class="bento__card">
+            <div class="bento__n" aria-hidden="true">04</div>
+            <h3>Acteur pratique</h3>
+            <p>Traduire l'info en décision utile — ou passer.</p>
+            <div class="tags"><span class="tag">action</span><span class="tag">filtre</span></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="block" aria-labelledby="go-title">
-      <div class="wrap">
-        <div class="cta">
-          <p class="kicker">Prêt</p>
-          <h2 id="go-title">Deux minutes. Une lecture claire.</h2>
-          <p>Soyez honnête&nbsp;: choisissez l'instinct, pas l'image. Résultat immédiat, à titre ludique uniquement.</p>
-          <a class="btn btn--ink" href="quiz.html">Démarrer maintenant</a>
-          <p class="trust">Clouds Taking Shape ApS — divertissement &amp; réflexion légère</p>
+    <section class="block" aria-labelledby="about-title">
+      <div class="wrap-n">
+        <p class="kicker">À propos</p>
+        <h2 id="about-title">Un outil, pas un verdict</h2>
+        <p>Conçu pour éclairer votre réaction spontanée quand l'actualité s'impose comme événement national. Ludique, court, sans prétention scientifique.</p>
+        <div class="actions">
+          <a class="btn btn--lime" href="quiz.html">Commencer le quiz</a>
+          <a class="btn btn--ghost" href="contact.html">Nous contacter</a>
         </div>
       </div>
     </section>
@@ -161,12 +115,12 @@
         <p class="foot__title">Clouds Taking Shape ApS</p>
         <p>Forme juridique : ApS</p>
         <p>CVR : 41405244</p>
-        <p>Nydamsvej 17, 8362 Hørning, Denmark</p>
+        <p>Nydamsvej 17, 8362 Hørning, Danemark</p>
         <p><a href="tel:+451025888908">+45 10 25 88 89 08</a></p>
         <p><a href="mailto:helle@cloudstakingshape.com">helle@cloudstakingshape.com</a></p>
       </div>
       <div>
-        <p class="foot__col-title">Pages légales</p>
+        <p class="foot__col">Pages légales</p>
         <ul class="foot__links">
           <li><a href="mentions-legales.html">Mentions légales</a></li>
           <li><a href="confidentialite.html">Confidentialité</a></li>
@@ -175,7 +129,7 @@
         </ul>
       </div>
       <div>
-        <p class="foot__col-title">Navigation</p>
+        <p class="foot__col">Navigation</p>
         <ul class="foot__links">
           <li><a href="index.html">Accueil</a></li>
           <li><a href="quiz.html">Quiz</a></li>
@@ -189,7 +143,6 @@
       <span>Site à titre ludique — voir <a href="conditions.html">les conditions</a>.</span>
     </div>
   </footer>
-
   <script src="js/main.js"></script>
 </body>
 </html>

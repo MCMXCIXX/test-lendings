@@ -1,37 +1,21 @@
-/* Clouds Taking Shape ApS — Affiche / outil 2 min */
+/* Site B — White utility / lime accent (no black header) */
 :root {
-  --white: #ffffff;
-  --snow: #f4f5f7;
-  --ink: #0b0d12;
-  --ink-2: #1c2230;
-  --mute: #5c6578;
-  --line: #d8dde8;
-  --blue: #2b59ff;
-  --blue-deep: #1a3fd6;
-  --blue-soft: #e8edff;
-  --blue-glow: rgba(43, 89, 255, 0.22);
-  --ok: #0f9f6e;
+  --bg: #f7f8f4;
+  --panel: #ffffff;
+  --ink: #12150f;
+  --mute: #5a6154;
+  --line: #d9ddd2;
+  --lime: #b8f200;
+  --lime-deep: #8fbc00;
+  --ink-soft: #2a3024;
 
-  --font-poster: "Archivo Black", "Arial Black", Impact, sans-serif;
-  --font-ui: "DM Sans", "Segoe UI", system-ui, sans-serif;
+  --display: "Syne", system-ui, sans-serif;
+  --ui: "Work Sans", "Segoe UI", system-ui, sans-serif;
 
-  --r: 18px;
-  --r-sm: 12px;
-  --r-pill: 999px;
-
-  --s1: 0.25rem;
-  --s2: 0.5rem;
-  --s3: 0.75rem;
-  --s4: 1rem;
-  --s5: 1.5rem;
-  --s6: 2rem;
-  --s7: 3.25rem;
-  --s8: 5rem;
-
-  --wrap: 72rem;
-  --wrap-sm: 40rem;
-
-  --shadow: 0 18px 40px rgba(11, 13, 18, 0.08);
-  --spring: cubic-bezier(0.34, 1.35, 0.64, 1);
+  --r: 22px;
+  --r-sm: 14px;
+  --max: 70rem;
+  --n: 40rem;
+  --spring: cubic-bezier(0.34, 1.4, 0.64, 1);
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 }

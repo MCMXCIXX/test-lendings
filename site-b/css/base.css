@@ -1,0 +1,155 @@
+/* Site B — base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--cream);
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+a {
+  color: var(--coral-deep);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--coral);
+}
+
+:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--ink);
+  text-wrap: balance;
+  margin: 0 0 var(--s4);
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+}
+
+h2 {
+  font-size: clamp(1.55rem, 3.5vw, 2.2rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--s2);
+}
+
+p {
+  margin: 0 0 var(--s4);
+  color: var(--ink-soft);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  color: var(--ink-soft);
+  padding-left: 1.2rem;
+}
+
+.wrap,
+.wrap-sm {
+  width: min(100% - 2rem, var(--wrap));
+  margin-inline: auto;
+}
+
+.wrap-sm {
+  width: min(100% - 2rem, var(--wrap-sm));
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -120px;
+  z-index: 100;
+  background: var(--coral);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: var(--r-sm);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip:focus {
+  top: 1rem;
+}
+
+.kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: var(--s3);
+}
+
+.hl {
+  color: var(--coral);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

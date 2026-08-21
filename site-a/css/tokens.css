@@ -1,0 +1,45 @@
+/* Bondeskovgaard Cleaning ApS — Design tokens (Site A) */
+:root {
+  --bg-deep: #07080b;
+  --bg-mid: #0e1015;
+  --bg-elevated: #161922;
+  --bg-card: #1b1f2a;
+  --bg-card-hover: #222734;
+
+  --amber: #e8a54b;
+  --amber-bright: #f3bd68;
+  --gold: #c9892e;
+  --amber-dim: rgba(232, 165, 75, 0.12);
+  --amber-glow: rgba(232, 165, 75, 0.32);
+  --amber-line: rgba(232, 165, 75, 0.45);
+
+  --text: #f7f2ea;
+  --text-muted: #b0aaa1;
+  --text-faint: #746f68;
+  --border: rgba(247, 242, 234, 0.09);
+  --border-strong: rgba(232, 165, 75, 0.3);
+
+  --font-display: "Libre Baskerville", "Times New Roman", Georgia, serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3.25rem;
+  --space-8: 5rem;
+
+  --max-w: 40rem;
+  --max-w-wide: 58rem;
+  --header-h: 4.25rem;
+
+  --shadow-cta: 0 0 0 1px rgba(232, 165, 75, 0.35), 0 10px 36px var(--amber-glow);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur: 0.4s;
+}

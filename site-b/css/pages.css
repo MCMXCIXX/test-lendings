@@ -1,0 +1,96 @@
+/* Site B — pages */
+
+.hero-dark {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 30%, rgba(255, 92, 46, 0.18), transparent 60%),
+    linear-gradient(180deg, #171717 0%, #101010 100%);
+  color: #fff;
+  padding: clamp(3rem, 9vw, 5.5rem) 0 clamp(3.5rem, 8vw, 5rem);
+  text-align: center;
+}
+
+.hero-dark h1 {
+  color: #fff;
+  max-width: 18ch;
+  margin-inline: auto;
+}
+
+.hero-dark p {
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 38rem;
+  margin: 0 auto var(--s6);
+  font-size: clamp(1.02rem, 2vw, 1.12rem);
+}
+
+.hero-dark .badge {
+  margin-bottom: var(--s5);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+  justify-content: center;
+}
+
+.section {
+  padding: clamp(3rem, 7vw, 5rem) 0;
+}
+
+.section--cream {
+  background: var(--cream);
+}
+
+.section--white {
+  background: var(--white);
+}
+
+.section-head {
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto var(--s6);
+}
+
+.section-head p {
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+.quiz-intro {
+  text-align: center;
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+}
+
+.quiz-intro h1,
+.quiz-intro h2 {
+  margin-bottom: var(--s4);
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+  margin-top: var(--s5);
+}
+
+.page {
+  padding: var(--s7) 0 var(--s8);
+}
+
+.trust {
+  margin-top: var(--s5);
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.trust strong {
+  color: var(--ink-soft);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}

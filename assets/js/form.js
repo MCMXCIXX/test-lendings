@@ -1,5 +1,5 @@
-// ClearRay Solar Advisors — multi-step lead form logic
-// States: FILLING (step 1..N) -> SUBMITTING (loading) -> SUCCESS (redirect to thank-you.html)
+// Verdalys Solaire — logique du formulaire multi-étapes
+// États : REMPLISSAGE (étape 1..N) -> ENVOI (chargement) -> SUCCÈS (redirection vers merci.html)
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('lead-form');
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (stepTotalEl) stepTotalEl.textContent = String(totalSteps);
 
-  const STORAGE_KEY = 'clearray_lead_form_progress';
+  const STORAGE_KEY = 'verdalys_lead_form_progress';
 
   function loadSavedData() {
     try {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       new FormData(form).forEach((value, key) => { data[key] = value; });
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     } catch (e) {
-      /* sessionStorage unavailable — progress simply won't persist across reload */
+      /* sessionStorage indisponible — la progression ne sera simplement pas conservée */
     }
   }
 
@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
       btnSubmit.hidden = true;
     }
 
-    // Move focus to the new step's legend for accessibility.
     const activeLegend = form.querySelector(`.form-step[data-step="${stepNum}"] legend`);
     if (activeLegend) activeLegend.setAttribute('tabindex', '-1');
   }
@@ -106,67 +105,67 @@ document.addEventListener('DOMContentLoaded', () => {
     let valid = true;
 
     if (stepNum === 1) {
-      const checked = stepEl.querySelector('input[name="homeOwnership"]:checked');
-      if (!checked) { setFieldError('homeOwnership', 'Please select an option to continue.'); valid = false; }
-      else setFieldError('homeOwnership', null);
+      const checked = stepEl.querySelector('input[name="statutOccupation"]:checked');
+      if (!checked) { setFieldError('statutOccupation', 'Veuillez sélectionner une option pour continuer.'); valid = false; }
+      else setFieldError('statutOccupation', null);
     }
 
     if (stepNum === 2) {
-      const checked = stepEl.querySelector('input[name="monthlyBill"]:checked');
-      if (!checked) { setFieldError('monthlyBill', 'Please select an option to continue.'); valid = false; }
-      else setFieldError('monthlyBill', null);
+      const checked = stepEl.querySelector('input[name="factureMensuelle"]:checked');
+      if (!checked) { setFieldError('factureMensuelle', 'Veuillez sélectionner une option pour continuer.'); valid = false; }
+      else setFieldError('factureMensuelle', null);
     }
 
     if (stepNum === 3) {
-      const zip = form.querySelector('#zip');
-      if (!/^\d{5}$/.test(zip.value.trim())) {
-        setFieldError('zip', 'Please enter a valid 5-digit ZIP code.');
+      const codePostal = form.querySelector('#codePostal');
+      if (!/^\d{5}$/.test(codePostal.value.trim())) {
+        setFieldError('codePostal', 'Veuillez saisir un code postal valide à 5 chiffres.');
         valid = false;
       } else {
-        setFieldError('zip', null);
+        setFieldError('codePostal', null);
       }
     }
 
     if (stepNum === 4) {
-      const fullName = form.querySelector('#fullName');
+      const nomComplet = form.querySelector('#nomComplet');
       const email = form.querySelector('#email');
-      const phone = form.querySelector('#phone');
+      const telephone = form.querySelector('#telephone');
 
-      if (!fullName.value.trim() || fullName.value.trim().length < 2) {
-        setFieldError('fullName', 'Please enter your full name.');
+      if (!nomComplet.value.trim() || nomComplet.value.trim().length < 2) {
+        setFieldError('nomComplet', 'Veuillez saisir votre nom complet.');
         valid = false;
       } else {
-        setFieldError('fullName', null);
+        setFieldError('nomComplet', null);
       }
 
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email.value.trim())) {
-        setFieldError('email', 'Please enter a valid email address.');
+        setFieldError('email', 'Veuillez saisir une adresse e-mail valide.');
         valid = false;
       } else {
         setFieldError('email', null);
       }
 
-      const phoneDigits = phone.value.replace(/\D/g, '');
-      if (phoneDigits.length !== 10) {
-        setFieldError('phone', 'Please enter a valid 10-digit phone number.');
+      // Format téléphone français : 10 chiffres, éventuellement précédés de +33.
+      const phoneDigits = telephone.value.replace(/[^\d]/g, '').replace(/^33/, '0');
+      const isValidFrenchPhone = /^0[1-9]\d{8}$/.test(phoneDigits);
+      if (!isValidFrenchPhone) {
+        setFieldError('telephone', 'Veuillez saisir un numéro de téléphone français valide (10 chiffres).');
         valid = false;
       } else {
-        setFieldError('phone', null);
+        setFieldError('telephone', null);
       }
     }
 
     return valid;
   }
 
-  // Clear errors as the user fixes fields.
   form.addEventListener('input', (e) => {
     const name = e.target.name;
     if (!name) return;
     if (e.target.type === 'radio') return;
     const errorEl = form.querySelector(`[data-error-for="${name}"]`);
     if (errorEl && !errorEl.hidden) {
-      // Re-validate just this field's step lazily on next input.
       const stepEl = e.target.closest('.form-step');
       if (stepEl) validateStep(Number(stepEl.dataset.step));
     }
@@ -196,12 +195,12 @@ document.addEventListener('DOMContentLoaded', () => {
     saveData();
 
     btnSubmit.disabled = true;
-    btnSubmit.querySelector('.btn-label').textContent = 'Submitting…';
+    btnSubmit.querySelector('.btn-label').textContent = 'Envoi en cours…';
     btnSubmit.querySelector('.btn-spinner').hidden = false;
 
-    // Simulated submission delay for realism — replace with a real request when a backend exists.
-    // Example real integration (commented out):
-    // const response = await fetch('https://your-api-endpoint.com/leads', {
+    // Délai simulé pour plus de réalisme — à remplacer par un vrai appel une fois le backend en place.
+    // Exemple d'intégration réelle (désactivé) :
+    // const response = await fetch('https://votre-api.exemple.com/leads', {
     //   method: 'POST',
     //   headers: { 'Content-Type': 'application/json' },
     //   body: JSON.stringify(Object.fromEntries(new FormData(form)))
@@ -209,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       try { sessionStorage.removeItem(STORAGE_KEY); } catch (err) { /* noop */ }
-      window.location.href = 'thank-you.html';
+      window.location.href = 'merci.html';
     }, 1200);
   });
 

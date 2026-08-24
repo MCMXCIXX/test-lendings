@@ -1,11 +1,11 @@
-// ClearRay Solar Advisors — site-wide behavior: nav toggle, footer year, cookie consent
+// Verdalys Solaire — comportement global du site : navigation, année du footer, consentement cookies
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Footer year
+  // Année du footer
   const yearEl = document.getElementById('copyright-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Mobile nav toggle
+  // Menu mobile
   const navToggle = document.getElementById('nav-toggle');
   const mainNav = document.getElementById('main-nav');
   if (navToggle && mainNav) {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCookieConsent();
 });
 
-const CONSENT_KEY = 'clearray_cookie_consent';
+const CONSENT_KEY = 'verdalys_cookie_consent';
 
 function getStoredConsent() {
   try {
@@ -39,16 +39,16 @@ function storeConsent(consent) {
   try {
     localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
   } catch (e) {
-    /* localStorage unavailable — consent will be re-prompted next visit */
+    /* localStorage indisponible — le consentement sera redemandé à la prochaine visite */
   }
 }
 
 function applyConsent(consent) {
-  // Integration point for real analytics/marketing scripts.
-  // Example (commented out):
-  // if (consent.analytics) { /* load Google Analytics */ }
-  // if (consent.marketing) { /* load ad pixels */ }
-  window.__clearrayConsent = consent;
+  // Point d'intégration pour de vrais scripts analytics/marketing.
+  // Exemple (désactivé) :
+  // if (consent.analytics) { /* charger un outil de mesure d'audience */ }
+  // if (consent.marketing) { /* charger les pixels publicitaires */ }
+  window.__verdalysConsent = consent;
 }
 
 function initCookieConsent() {
@@ -57,6 +57,8 @@ function initCookieConsent() {
   const analyticsToggle = document.getElementById('consent-analytics');
   const marketingToggle = document.getElementById('consent-marketing');
 
+  // Conformité RGPD/CNIL : aucun cookie non essentiel n'est appliqué tant que
+  // l'utilisateur n'a pas fait un choix explicite (opt-in), pas de case pré-cochée.
   const existing = getStoredConsent();
 
   if (existing) {
@@ -105,7 +107,6 @@ function initCookieConsent() {
   if (cancelSettingsBtn) {
     cancelSettingsBtn.addEventListener('click', () => {
       settingsPanel.hidden = true;
-      // If the user never gave initial consent, keep the banner visible.
       const current = getStoredConsent();
       if (!current && banner) banner.hidden = false;
     });

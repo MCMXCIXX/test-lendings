@@ -192,12 +192,23 @@ img, svg.illus { max-width: 100%; display: block; }
   box-shadow: var(--shadow-md);
   color: var(--ink-900);
 }
-.hero-photo {
+.hero-photo-frame {
+  position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  padding-top: 72%; /* ratio 4:3 fiable sur tous les moteurs de rendu, y compris ceux sans support de aspect-ratio */
   border-radius: var(--radius-md);
+  overflow: hidden;
   margin-bottom: 18px;
+  background: var(--pine-100);
+}
+.hero-photo-frame .hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 0;
 }
 .hero-visual h3 { margin-bottom: 8px; }
 .hero-visual ul { padding-left: 1.15em; margin: 0 0 18px; color: var(--ink-600); font-size: .95rem; }

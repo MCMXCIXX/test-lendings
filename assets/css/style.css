@@ -68,10 +68,10 @@ img, svg.illus { max-width: 100%; display: block; }
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 30px;
-  border-radius: 999px;
+  padding: 11px 22px;
+  border-radius: 10px;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: .94rem;
   font-family: "Manrope", sans-serif;
   border: 2px solid transparent;
   cursor: pointer;
@@ -159,8 +159,8 @@ img, svg.illus { max-width: 100%; display: block; }
     justify-content: center;
     background: var(--terracotta-500);
     color: var(--white);
-    padding: 13px 20px;
-    border-radius: 999px;
+    padding: 11px 20px;
+    border-radius: 10px;
     font-weight: 700;
     margin-top: 4px;
   }

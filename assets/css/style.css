@@ -136,6 +136,8 @@ img, svg.illus { max-width: 100%; display: block; }
   cursor: pointer;
 }
 
+.main-nav__cta { display: none; }
+
 @media (max-width: 860px) {
   .main-nav { display: none; }
   .nav-toggle { display: inline-flex; }
@@ -148,7 +150,33 @@ img, svg.illus { max-width: 100%; display: block; }
     padding: 16px 24px 24px;
     border-bottom: 1px solid var(--border);
     gap: 16px;
+    max-height: calc(100vh - 76px);
+    overflow-y: auto;
   }
+  .main-nav.is-open .main-nav__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--terracotta-500);
+    color: var(--white);
+    padding: 13px 20px;
+    border-radius: 999px;
+    font-weight: 700;
+    margin-top: 4px;
+  }
+}
+
+/* En dessous de ~640px, "Verdalys Solaire" + le bouton + le menu burger ne
+   tiennent plus sur une seule ligne : le CTA du header se replie dans le
+   menu mobile (voir .main-nav__cta ci-dessus) pour éviter tout débordement. */
+@media (max-width: 640px) {
+  .header-cta .btn--primary { display: none; }
+}
+@media (max-width: 360px) {
+  .brand { font-size: 1.02rem; gap: 8px; }
+  .brand__mark { width: 30px; height: 30px; }
+  .site-header .container { height: 68px; }
+  .main-nav.is-open { top: 68px; }
 }
 
 /* ---------- Hero ---------- */
@@ -321,6 +349,10 @@ input[aria-invalid="true"] { border-color: var(--red-warn); background: #fbeeea;
 
 .form-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 28px; }
 .form-nav .btn { flex: 1; }
+@media (max-width: 480px) {
+  .form-nav { flex-direction: column-reverse; }
+  .form-nav .btn { width: 100%; white-space: normal; }
+}
 
 .btn-spinner {
   width: 16px; height: 16px; border: 2.5px solid rgba(255,255,255,.4);
@@ -409,6 +441,9 @@ input[aria-invalid="true"] { border-color: var(--red-warn); background: #fbeeea;
 .legal-page h2 { font-size: 1.32rem; margin-top: 2em; }
 .legal-page h3 { font-size: 1.05rem; margin-top: 1.4em; }
 .legal-page table { width: 100%; border-collapse: collapse; margin: 1.2em 0; font-size: .92rem; }
+@media (max-width: 700px) {
+  .legal-page table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 .legal-page th, .legal-page td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
 .legal-page th { background: var(--pine-100); }
 .legal-page ul, .legal-page ol { padding-left: 1.3em; }

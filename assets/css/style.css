@@ -391,7 +391,47 @@ input[aria-invalid="true"] { border-color: var(--red-warn); background: #fbeeea;
 /* ---------- Map embed ---------- */
 .map-embed { border-radius: var(--radius-md); overflow: hidden; margin: 1.2em 0; }
 .map-embed iframe { display: block; }
-.map-embed--footer { margin: 14px 0 0; border: 1px solid rgba(255,255,255,.12); filter: grayscale(.15); }
+
+/* ---------- Contact block ---------- */
+.contact-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.map-embed--contact { margin: 0; border-radius: 0; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+}
+.contact-tile {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px 26px;
+  background: var(--white);
+}
+.contact-tile__icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--pine-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-tile h4 { margin: 0 0 4px; font-family: "Manrope", sans-serif; font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-400); font-weight: 700; }
+.contact-tile p { margin: 0; font-size: .98rem; color: var(--ink-900); line-height: 1.45; }
+.contact-tile p a { color: var(--pine-800); font-weight: 600; text-decoration: none; }
+.contact-tile p a:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--pine-900); color: #b7c9bd; padding: 58px 0 30px; font-size: .92rem; }

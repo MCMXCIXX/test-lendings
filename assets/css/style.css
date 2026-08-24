@@ -192,7 +192,13 @@ img, svg.illus { max-width: 100%; display: block; }
   box-shadow: var(--shadow-md);
   color: var(--ink-900);
 }
-.hero-visual .illus { margin: 0 auto 16px; }
+.hero-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: 18px;
+}
 .hero-visual h3 { margin-bottom: 8px; }
 .hero-visual ul { padding-left: 1.15em; margin: 0 0 18px; color: var(--ink-600); font-size: .95rem; }
 .hero-visual li { margin-bottom: 6px; }

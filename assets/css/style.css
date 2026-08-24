@@ -388,6 +388,11 @@ input[aria-invalid="true"] { border-color: var(--red-warn); background: #fbeeea;
 .final-cta .btn--secondary { border-color: var(--white); color: var(--white); }
 .final-cta .btn--secondary:hover { background: rgba(255,255,255,.12); }
 
+/* ---------- Map embed ---------- */
+.map-embed { border-radius: var(--radius-md); overflow: hidden; margin: 1.2em 0; }
+.map-embed iframe { display: block; }
+.map-embed--footer { margin: 14px 0 0; border: 1px solid rgba(255,255,255,.12); filter: grayscale(.15); }
+
 /* ---------- Footer ---------- */
 .site-footer { background: var(--pine-900); color: #b7c9bd; padding: 58px 0 30px; font-size: .92rem; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 36px; }

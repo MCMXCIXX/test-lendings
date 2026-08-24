@@ -1,57 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Test Lendings — Choose a site</title>
-  <meta name="description" content="Two unique French quiz landers rebuilt for ad relevance. Pick Site A or Site B.">
-  <meta name="theme-color" content="#12150f">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="hub.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClearRay Solar Advisors | See If You Qualify for $0-Down Solar</title>
+<meta name="description" content="Answer a few quick questions and find out if your home qualifies for $0-down solar programs in your area. Free, no-obligation, takes about 2 minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+<link rel="alternate icon" href="assets/images/favicon.svg">
 </head>
 <body>
-  <a class="skip" href="#choose">Skip to sites</a>
-  <div class="noise" aria-hidden="true"></div>
-  <header class="mast">
-    <p class="mast__mark">Test Lendings</p>
-    <p class="mast__sub">Same quiz pattern · Two new identities</p>
-  </header>
-  <main id="choose" class="split">
-    <a class="door door--a" href="site-a/index.html">
-      <div class="door__glow" aria-hidden="true"></div>
-      <div class="door__inner">
-        <span class="door__code">01</span>
-        <p class="door__kicker">Broadsheet · encre + bordeaux</p>
-        <h2 class="door__title">Bondeskovgaard<br>Cleaning ApS</h2>
-        <p class="door__desc">Newspaper masthead · ruled profiles · serif editorial · wine accent — not the old dark amber page.</p>
-        <ul class="door__tags">
-          <li>Newsreader</li>
-          <li>Ruled list</li>
-          <li>Ad H1</li>
-        </ul>
-        <span class="door__cta">Enter Site A <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+
+<header class="site-header">
+  <div class="container">
+    <a href="#top" class="brand"><svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <rect width="40" height="40" rx="9" fill="#0B3D62"/>
+  <circle cx="20" cy="20" r="8" fill="#F5A623"/>
+  <g stroke="#F5A623" stroke-width="2.6" stroke-linecap="round">
+    <line x1="20" y1="4" x2="20" y2="9"/><line x1="20" y1="31" x2="20" y2="36"/>
+    <line x1="4" y1="20" x2="9" y2="20"/><line x1="31" y1="20" x2="36" y2="20"/>
+    <line x1="8.3" y1="8.3" x2="11.8" y2="11.8"/><line x1="28.2" y1="28.2" x2="31.7" y2="31.7"/>
+    <line x1="8.3" y1="31.7" x2="11.8" y2="28.2"/><line x1="28.2" y1="11.8" x2="31.7" y2="8.3"/>
+  </g>
+</svg>ClearRay Solar Advisors</a>
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#form" class="btn btn--primary">Check My Eligibility</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <h1>See If Your Home Qualifies for $0-Down Solar</h1>
+        <p class="hero-sub">Electricity rates in most U.S. states have climbed for six straight years. Answer a few quick questions to see what solar options may be available for your home — no pressure, no obligation.</p>
+        <a href="#form" class="btn btn--primary">Check My Eligibility — Free</a>
+        <div class="hero-trust">
+          <span>Takes about 2 minutes</span>
+          <span>No cost to check</span>
+          <span>No obligation to buy</span>
+        </div>
       </div>
-    </a>
-    <a class="door door--b" href="site-b/index.html">
-      <div class="door__glow" aria-hidden="true"></div>
-      <div class="door__inner">
-        <span class="door__code">02</span>
-        <p class="door__kicker">Utility · lime on white</p>
-        <h2 class="door__title">Clouds Taking<br>Shape ApS</h2>
-        <p class="door__desc">Quiz-first lime band · white sticky header · bento profiles · 2×2 answers — not the old black-header coral page.</p>
-        <ul class="door__tags">
-          <li>Syne</li>
-          <li>Bento</li>
-          <li>2 min</li>
+      <div class="hero-card">
+        <h3>What you'll need</h3>
+        <ul>
+          <li>Your ZIP code (to check local program availability)</li>
+          <li>A rough idea of your average monthly electric bill</li>
+          <li>Whether you own or rent your home</li>
         </ul>
-        <span class="door__cta">Enter Site B <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <a href="#form" class="btn btn--primary" style="width:100%;">Start My Free Check</a>
+        <p class="hero-disclaimer">Availability of $0-down and incentive programs varies by state, utility, and household. ClearRay Solar Advisors is not affiliated with any government agency.</p>
       </div>
-    </a>
-  </main>
-  <footer class="foot">
-    <p>French personality quiz · déclaration choc / France / antenne · GitHub Pages</p>
-  </footer>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="stat"><strong>38,000+</strong><span>Homeowner inquiries reviewed since 2019*</span></div>
+      <div class="stat"><strong>4.7 / 5</strong><span>Average partner-network rating*</span></div>
+      <div class="stat"><strong>50 states</strong><span>Network coverage varies by ZIP code</span></div>
+      <div class="stat"><strong>2 minutes</strong><span>Typical time to complete the form</span></div>
+    </div>
+  </div>
+
+  <!-- PROBLEM / CONTEXT -->
+  <section id="context">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Why homeowners are looking into this now</span>
+        <h2>Utility rates keep climbing — and most bills don't explain why</h2>
+        <p>Between grid infrastructure costs, fuel price swings, and rising demand, residential electricity rates have increased in the majority of U.S. states over the past several years. For many households, the monthly bill has become one of the least predictable line items in the budget.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="card">
+          <strong>Rates rarely go down</strong>
+          <p>Utility rate increases are typically approved incrementally and rarely reversed, which means a bill that feels manageable today can climb steadily over a 10–20 year horizon.</p>
+        </div>
+        <div class="card">
+          <strong>Incentives are easy to miss</strong>
+          <p>Federal tax credits, state rebates, and utility-specific programs change from year to year and vary by ZIP code — most homeowners never find out which ones actually apply to their address.</p>
+        </div>
+        <div class="card">
+          <strong>Quotes are hard to compare</strong>
+          <p>Reaching out to installers one by one is slow and makes it difficult to compare financing structures, equipment, and warranties side by side.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="bg-alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The process</span>
+        <h2>How the eligibility check works</h2>
+        <p>This is a short screening process, not a sales call. Here's exactly what happens after you click "Check My Eligibility."</p>
+      </div>
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Answer a few questions</h3>
+          <p>Tell us whether you own or rent, roughly what you pay for electricity, and your ZIP code. No personal contact details required yet.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>We check local availability</h3>
+          <p>We compare your answers against known program and installer availability for your state and utility territory.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>You're matched, if eligible</h3>
+          <p>If your address appears to qualify, we connect you with vetted solar partners who service your area.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>A specialist follows up</h3>
+          <p>A partner representative contacts you to walk through real numbers for your home. You decide if it's worth pursuing — there's no obligation at any step.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What homeowners typically ask about</span>
+        <h2>What a home solar system can offer</h2>
+        <p>Every property is different, and a licensed installer will give you exact numbers for your roof, usage, and local rates. In general, homeowners who move forward tend to be interested in the following.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <h3>Lower, more predictable bills</h3>
+          <p>Generating a portion of your own electricity can reduce reliance on utility rate increases. Actual savings depend on system size, usage, financing terms, and local rates, and are not guaranteed.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>$0-down financing options</h3>
+          <p>Many installers in our network offer solar loans or leases that require no upfront payment. Approval and terms depend on credit and program availability in your state.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Available incentives</h3>
+          <p>The federal solar Investment Tax Credit and select state or utility rebates may reduce the net cost of a system for qualifying homeowners. Eligibility rules change and should be confirmed with a tax professional.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Backup power readiness</h3>
+          <p>Many systems can be paired with battery storage, which may provide backup power during outages depending on the equipment and configuration chosen.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Warrantied equipment</h3>
+          <p>Reputable installers typically offer 10–25 year warranties on panels, inverters, and workmanship. Warranty terms vary by manufacturer and installer.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>No-obligation quotes</h3>
+          <p>Reviewing a quote does not commit you to installation. You can compare options and walk away at any point in the process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section id="reviews" class="bg-alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What homeowners say</span>
+        <h2>Illustrative homeowner experiences</h2>
+        <p>The examples below are illustrative composites based on common feedback patterns reported to our partner network. They are provided to describe the type of experience homeowners have had, not as verified individual endorsements.</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>"I filled out the form expecting a hard sales pitch, but the first call was just someone walking me through what my roof could actually support. Took about three weeks from quote to install."</p>
+          <footer>— Illustrative example, homeowner in Travis County, TX</footer>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>"The $0-down option was the deciding factor for us. Our installer was upfront that the monthly loan payment wouldn't disappear our bill entirely in year one, which I appreciated — no exaggerated promises."</p>
+          <footer>— Illustrative example, homeowner in Maricopa County, AZ</footer>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars" aria-hidden="true">★★★★☆</div>
+          <p>"Comparing two installers side by side through this process saved me a lot of back-and-forth. One quote was noticeably better once I actually read the fine print on financing."</p>
+          <footer>— Illustrative example, homeowner in Wake County, NC</footer>
+        </div>
+      </div>
+      <p class="illustrative-note">*Statistics and testimonials on this page are illustrative and intended to describe typical patterns; they are not independently audited figures.</p>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section id="form" class="lead-form-section" aria-labelledby="form-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Free eligibility check</span>
+        <h2 id="form-heading">See If You Qualify — It Only Takes About 2 Minutes</h2>
+        <p>No cost to check. No obligation to move forward. You can stop at any time.</p>
+      </div>
+
+      <div class="form-shell">
+        <form id="lead-form" novalidate>
+          <div class="form-progress" role="progressbar" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1">
+            <span class="form-progress__label">Step <span id="step-current">1</span> of <span id="step-total">4</span></span>
+            <div class="form-progress__bar">
+              <div class="form-progress__fill" id="progress-fill" style="width: 25%;"></div>
+            </div>
+          </div>
+
+          <!-- Step 1 -->
+          <fieldset class="form-step" data-step="1">
+            <legend>Do you own or rent your home?</legend>
+            <p class="step-hint">Most solar financing and incentive programs are only available to homeowners.</p>
+            <div class="option-group" role="radiogroup" aria-required="true">
+              <label class="option-card">
+                <input type="radio" name="homeOwnership" value="own" required>
+                <span>I own my home</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="homeOwnership" value="rent">
+                <span>I rent</span>
+              </label>
+            </div>
+            <p class="field-error" data-error-for="homeOwnership" hidden>Please select an option to continue.</p>
+          </fieldset>
+
+          <!-- Step 2 -->
+          <fieldset class="form-step" data-step="2" hidden>
+            <legend>What's your average monthly electric bill?</legend>
+            <p class="step-hint">This helps us estimate whether a system would be cost-effective for your usage level.</p>
+            <div class="option-group" role="radiogroup" aria-required="true">
+              <label class="option-card"><input type="radio" name="monthlyBill" value="under-100" required><span>Under $100</span></label>
+              <label class="option-card"><input type="radio" name="monthlyBill" value="100-250"><span>$100 – $250</span></label>
+              <label class="option-card"><input type="radio" name="monthlyBill" value="250-plus"><span>$250+</span></label>
+            </div>
+            <p class="field-error" data-error-for="monthlyBill" hidden>Please select an option to continue.</p>
+          </fieldset>
+
+          <!-- Step 3 -->
+          <fieldset class="form-step" data-step="3" hidden>
+            <legend>Where is the property located?</legend>
+            <p class="step-hint">Program availability and rebates are determined by state and utility territory.</p>
+            <label for="zip">ZIP Code</label>
+            <input type="text" id="zip" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" required>
+            <p class="field-error" data-error-for="zip" hidden>Please enter a valid 5-digit ZIP code.</p>
+          </fieldset>
+
+          <!-- Step 4 -->
+          <fieldset class="form-step" data-step="4" hidden>
+            <legend>Where should we send your results?</legend>
+            <p class="step-hint">A specialist will use this information to follow up with your personalized results.</p>
+
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" autocomplete="name" required>
+            <p class="field-error" data-error-for="fullName" hidden>Please enter your full name.</p>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+            <p class="field-error" data-error-for="email" hidden>Please enter a valid email address.</p>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+            <p class="field-error" data-error-for="phone" hidden>Please enter a valid 10-digit phone number.</p>
+            <p class="field-hint">We'll only use this to discuss your results — no spam calls, and you can ask to stop contact at any time.</p>
+          </fieldset>
+
+          <div class="form-nav">
+            <button type="button" id="btn-back" class="btn btn--secondary" hidden>Back</button>
+            <button type="button" id="btn-next" class="btn btn--primary">Next</button>
+            <button type="submit" id="btn-submit" class="btn btn--primary" hidden>
+              <span class="btn-label">Get My Free Results</span>
+              <span class="btn-spinner" hidden aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <p class="form-disclaimer">
+            By submitting this form, you agree to our <a href="terms.html">Terms of Service</a> and <a href="privacy-policy.html">Privacy Policy</a>, including that your information may be shared with our network of pre-screened solar partners as described in our Privacy Policy. No purchase necessary. Submitting your information does not guarantee eligibility, approval, or specific savings.
+          </p>
+        </form>
+
+        <div id="form-success" class="form-success" hidden>
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <h3>Thank You — Your Request Has Been Received</h3>
+          <p>A specialist will review your information and reach out within 1 business day. No obligation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Common questions</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Does it cost anything to check my eligibility?</summary>
+          <p>No. Completing the form on this page is free and does not obligate you to purchase anything. There is no fee to be matched with a partner or to receive a quote.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Will someone call me, and how soon?</summary>
+          <p>If your ZIP code and answers indicate you may be eligible, a specialist from our partner network typically reaches out within 1 business day by phone or email, using the contact details you provide on the final step.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need to buy anything today?</summary>
+          <p>No. This form is a screening step to see what may be available for your home. Any decision to move forward with a quote, financing, or installation happens later, directly between you and the licensed installer, on your own timeline.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is ClearRay Solar Advisors a government program?</summary>
+          <p>No. ClearRay Solar Advisors is a private lead-generation service and is not affiliated with, endorsed by, or operated by any government agency. Some homeowners may separately qualify for government or utility incentive programs, which a licensed installer can explain in detail.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What happens to the information I submit?</summary>
+          <p>We use it to determine whether solar options may be available in your area and, if so, to connect you with relevant partners who may contact you about your inquiry. Full details are available in our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How much can I actually expect to save?</summary>
+          <p>Savings depend on your current utility rates, roof orientation, shading, system size, and financing terms, so we can't quote a number without a site-specific assessment. Any savings estimate you receive from a partner should be treated as an estimate, not a guarantee.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Will requesting a quote affect my credit?</summary>
+          <p>Requesting information through this form does not involve a credit check. If you choose to apply for solar financing later with a partner, that lender will explain whether and how their application process affects your credit.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I stop the process at any time?</summary>
+          <p>Yes. You are never obligated to continue past any step, and you can ask any partner who contacts you to stop further communication. See our <a href="privacy-policy.html">Privacy Policy</a> for details on managing your information.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Ready to see what's available at your address?</h2>
+      <p>It takes about 2 minutes, and there's no obligation to move forward.</p>
+      <a href="#form" class="btn btn--secondary" style="border-color:#0b3d62;">Check My Eligibility</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand"><svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <rect width="40" height="40" rx="9" fill="#F5A623"/>
+  <circle cx="20" cy="20" r="8" fill="#0B3D62"/>
+  <g stroke="#0B3D62" stroke-width="2.6" stroke-linecap="round">
+    <line x1="20" y1="4" x2="20" y2="9"/><line x1="20" y1="31" x2="20" y2="36"/>
+    <line x1="4" y1="20" x2="9" y2="20"/><line x1="31" y1="20" x2="36" y2="20"/>
+    <line x1="8.3" y1="8.3" x2="11.8" y2="11.8"/><line x1="28.2" y1="28.2" x2="31.7" y2="31.7"/>
+    <line x1="8.3" y1="31.7" x2="11.8" y2="28.2"/><line x1="28.2" y1="11.8" x2="31.7" y2="8.3"/>
+  </g>
+</svg>ClearRay Solar Advisors</a>
+        <p>ClearRay Solar Advisors connects U.S. homeowners with a network of vetted local solar installers and financing partners. We are a lead-generation service, not a manufacturer, installer, or lender.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#form">Check Eligibility</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@clearraysolar.com">hello@clearraysolar.com</a></li>
+          <li><a href="mailto:privacy@clearraysolar.com">privacy@clearraysolar.com</a></li>
+          <li>Austin, TX (mailing address on request)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      <p><strong>Disclaimer:</strong> ClearRay Solar Advisors is not affiliated with any government agency and does not provide, install, or finance solar equipment directly. Savings, incentive eligibility, and financing terms are illustrative, vary by location and household, and are ultimately determined by the licensed third-party installer or lender who contacts you. Submitting this form does not obligate you to purchase any product or service and does not guarantee eligibility, approval, or specific savings.</p>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="copyright-year">2026</span> ClearRay Solar Advisors. All rights reserved.</span>
+      <button type="button" id="footer-cookie-settings" style="background:none;border:none;color:#b9cadb;text-decoration:underline;cursor:pointer;padding:0;font:inherit;">Cookie Settings</button>
+    </div>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" hidden>
+  <p>We use cookies to run this site, understand how it's used, and — with your consent — measure advertising performance. See our <a href="cookie-policy.html">Cookie Policy</a> for details.</p>
+  <div class="cookie-banner-actions">
+    <button type="button" class="btn btn--secondary" id="cookie-reject">Reject Non-Essential</button>
+    <button type="button" class="btn btn--secondary" id="cookie-settings-open">Cookie Settings</button>
+    <button type="button" class="btn btn--primary" id="cookie-accept">Accept All</button>
+  </div>
+</div>
+
+<!-- COOKIE SETTINGS MODAL -->
+<div class="cookie-settings-panel" id="cookie-settings-panel" role="dialog" aria-modal="true" aria-labelledby="cookie-settings-title" hidden>
+  <div class="cookie-settings-card">
+    <h3 id="cookie-settings-title">Cookie Settings</h3>
+    <p>Choose which categories of cookies we're allowed to use. Necessary cookies can't be turned off because the site relies on them to function.</p>
+
+    <div class="cookie-category">
+      <div>
+        <h4>Necessary</h4>
+        <p>Required for core site functionality, form security, and remembering your cookie choice.</p>
+      </div>
+      <span class="toggle-switch">
+        <input type="checkbox" checked disabled aria-label="Necessary cookies (always on)">
+        <span class="toggle-track" aria-hidden="true"></span>
+      </span>
+    </div>
+    <div class="cookie-category">
+      <div>
+        <h4>Analytics</h4>
+        <p>Helps us understand how visitors use the site so we can improve it.</p>
+      </div>
+      <span class="toggle-switch">
+        <input type="checkbox" id="consent-analytics" aria-label="Analytics cookies">
+        <span class="toggle-track" aria-hidden="true"></span>
+      </span>
+    </div>
+    <div class="cookie-category">
+      <div>
+        <h4>Marketing</h4>
+        <p>Used to measure ad performance and show relevant advertising across other sites.</p>
+      </div>
+      <span class="toggle-switch">
+        <input type="checkbox" id="consent-marketing" aria-label="Marketing cookies">
+        <span class="toggle-track" aria-hidden="true"></span>
+      </span>
+    </div>
+
+    <div class="cookie-settings-actions">
+      <button type="button" class="btn btn--secondary" id="cookie-settings-cancel">Cancel</button>
+      <button type="button" class="btn btn--primary" id="cookie-settings-save">Save Preferences</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/form.js"></script>
 </body>
 </html>
